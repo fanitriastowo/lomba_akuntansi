@@ -1,0 +1,15 @@
+INSERT INTO `cbt_master_mapel` (`id`, `mapel`) VALUES
+   (1, 'IPA'),
+   (2, 'Bahasa Indonesia IPS'),
+   (3, 'IPS'),
+   (4, 'Bahasa Inggris IPS'),
+   (5, 'Agama IPS'),
+   (6, 'Matematika IPA'),
+   (7, 'Matematika IPS'),
+   (8, 'Bahasa Inggris IPA'),
+   (9, 'Bahasa Indonesia IPA'),
+   (10, 'Matematika IPA'),
+   (11, 'Agama IPA'),
+   (12, 'Biologi IPA'),
+   (13, 'Fisika IPA'),
+   (14, 'Kimia IPA');

@@ -1,0 +1,129 @@
+@CHARSET "UTF-8";
+
+.hide_li_bullet {
+   list-style: none;
+}
+.hide_radio_circle {
+   display: none;
+}
+.tabs-left {
+   height: 450px;
+   overflow-y: scroll;
+   width: 100%;
+}
+.panel {
+   background: #ededed;
+}
+
+.btn-default {
+   border-color: #DDD;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+   background-color: #CFCFCF;
+   border-color: #5C7CFF;
+}
+.btn-danger {
+   background-color: #b64645;
+   border-color: #b64645;
+}
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active,
+.btn-danger.active,
+.open > .dropdown-toggle.btn-danger {
+   background-color: #a43f3e;
+   border-color: #a43f3e;
+}
+.btn-danger[disabled],
+.btn-danger.disabled {
+   background: #c66968;
+   border-color: #c36261;
+}
+.btn-warning {
+   background-color: #fea223;
+   border-color: #fea223;
+}
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning.active,
+.open > .dropdown-toggle.btn-warning {
+   background-color: #fe970a;
+   border-color: #fe970a;
+}
+.btn-warning[disabled],
+.btn-warning.disabled {
+   background: #feb756;
+   border-color: #feb34c;
+}
+.btn-success {
+   background-color: #95b75d;
+   border-color: #95b75d;
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open > .dropdown-toggle.btn-success {
+   background-color: #89ad4d;
+   border-color: #89ad4d;
+}
+.btn-success[disabled],
+.btn-success.disabled {
+   background: #acc780;
+   border-color: #a7c479;
+}
+.btn-primary {
+   background-color: #33414e;
+   border-color: #33414e;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+   background-color: #29343f;
+   border-color: #29343f;
+}
+.btn-primary[disabled],
+.btn-primary.disabled {
+   background: #475b6d;
+   border-color: #435667;
+}
+.btn-info {
+   background-color: #3fbae4;
+   border-color: #3fbae4;
+}
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active,
+.open > .dropdown-toggle.btn-info {
+   background-color: #29b2e1;
+   border-color: #29b2e1;
+}
+
+.bg-primary {
+   color: #fff;
+   background-color: #33414e;
+}
+.bg-success {
+   color: #fff;
+   background-color: #95b75d;
+}
+.bg-info {
+   color: #fff;
+   background-color: #3fbae4;
+}
+.bg-warning {
+   color: #fff;
+   background-color: #fea223;
+}
+.bg-danger {
+   color: #fff;
+   background-color: #b64645;
+}

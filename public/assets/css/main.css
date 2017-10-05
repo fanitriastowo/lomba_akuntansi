@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+
+body {
+	padding-top: 20px;
+	background-image: url(../images/texture.png);
+	background-repeat: repeat;
+}

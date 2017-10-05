@@ -1,0 +1,21 @@
+1. Admin Panel;
+   a. Login Admin
+   b. input bank soal
+   c. mengatur peserta
+
+2. Operator Panel;
+   a. Login Operator
+   b. Open Exam && Close Exam
+   c. Cetak Hasil Ujian :
+      1) cocokan jawaban user (kolom jawaban table jawaban) dengan kunci jawaban (kolom jawaban table soal)
+      2) hitung (jumlah poin per soal * jawaban yang benar)
+      3) tampilkan keterangan LULUS / TIDAK LULUS berdasarkan grade nilai < 50
+
+3. Peserta Panel;
+   a. Login Peserta (menggunakan id pendaftaran)
+   b. mengerjakan soal
+
+4. Lain-lain:
+   a. soal terdiri dari 3 paket. paket1, paket2, dan paket3.
+   b. soal bersifat acak antar peserta.
+   c. soal disesuaikan dengan jurusan peserta.
