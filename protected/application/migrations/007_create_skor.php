@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 class Migration_create_skor extends CI_Migration {
-   
+
    function __construct() {
       parent::__construct();
    }
@@ -12,7 +12,7 @@ class Migration_create_skor extends CI_Migration {
       $this->dbforge->add_field("skor INT");
       $this->dbforge->add_field("keterangan VARCHAR(250)");
       $this->dbforge->add_field(
-         "CONSTRAINT skor_users_fk FOREIGN KEY(user_id) REFERENCES cbt_users(id) ON UPDATE NO ACTION ON DELETE CASCADE");
+          "CONSTRAINT skor_users_fk FOREIGN KEY(user_id) REFERENCES akuntansi_users(id) ON UPDATE NO ACTION ON DELETE CASCADE");
       $this->dbforge->create_table('skor');
    }
 

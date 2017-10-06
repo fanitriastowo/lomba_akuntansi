@@ -11,7 +11,7 @@ class Migration_create_mastermapel_paket_jointable extends CI_Migration {
       $this->dbforge->add_field("idmapel INT NOT NULL");
       $this->dbforge->add_field("idpaket INT NOT NULL");
       $this->dbforge->add_field(
-        "CONSTRAINT idmapel_mastermapel_fk FOREIGN KEY(idmapel) REFERENCES cbt_master_mapel(id) ON UPDATE NO ACTION ON DELETE CASCADE");
+        "CONSTRAINT idmapel_mastermapel_fk FOREIGN KEY(idmapel) REFERENCES akuntansi_master_mapel(id) ON UPDATE NO ACTION ON DELETE CASCADE");
       $this->dbforge->create_table('mastermapel_paketsoal_jointable');
    }
 

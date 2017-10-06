@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 class Migration_add_jawaban_quisioner extends CI_Migration {
-   
+
    function __construct() {
       parent::__construct();
    }
@@ -12,9 +12,9 @@ class Migration_add_jawaban_quisioner extends CI_Migration {
       $this->dbforge->add_field("ujian_id INT NOT NULL");
       $this->dbforge->add_field("jawaban_quisioner TEXT");
       $this->dbforge->add_field(
-         "CONSTRAINT jawaban_user_fk FOREIGN KEY(user_id) REFERENCES cbt_users(id) ON UPDATE NO ACTION ON DELETE CASCADE");
+          "CONSTRAINT jawaban_user_fk FOREIGN KEY(user_id) REFERENCES akuntansi_users(id) ON UPDATE NO ACTION ON DELETE CASCADE");
       $this->dbforge->add_field(
-         "CONSTRAINT quisioner_ujian_fk FOREIGN KEY(ujian_id) REFERENCES cbt_ujian(id) ON UPDATE NO ACTION ON DELETE CASCADE");
+          "CONSTRAINT quisioner_ujian_fk FOREIGN KEY(ujian_id) REFERENCES akuntansi_ujian(id) ON UPDATE NO ACTION ON DELETE CASCADE");
       $this->dbforge->create_table('jawaban_quisioner');
    }
 
