@@ -64,37 +64,5 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
-$db['pusat']['hostname'] = "localhost";
-$db['pusat']['username'] = "pmbumpac_pmb";
-$db['pusat']['password'] = "DBpmbUMP234";
-$db['pusat']['database'] = "pmbumpac_pmb2017";
-$db['pusat']['dbdriver'] = "mysqli";
-$db['pusat']['dbprefix'] = "";
-$db['pusat']['pconnect'] = FALSE;
-$db['pusat']['db_debug'] = FALSE;
-$db['pusat']['cache_on'] = FALSE;
-$db['pusat']['cachedir'] = "";
-$db['pusat']['char_set'] = "utf8";
-$db['pusat']['dbcollat'] = "utf8_general_ci";
-$db['pusat']['swap_pre'] = "";
-$db['pusat']['autoinit'] = TRUE;
-$db['pusat']['stricton'] = FALSE;
-
-$db['pusat_setting']['hostname'] = "localhost";
-$db['pusat_setting']['username'] = "pmbumpac_pmb";
-$db['pusat_setting']['password'] = "DBpmbUMP234";
-$db['pusat_setting']['database'] = "pmbumpac_pmbsetting";
-$db['pusat_setting']['dbdriver'] = "mysqli";
-$db['pusat_setting']['dbprefix'] = "";
-$db['pusat_setting']['pconnect'] = FALSE;
-$db['pusat_setting']['db_debug'] = FALSE;
-$db['pusat_setting']['cache_on'] = FALSE;
-$db['pusat_setting']['cachedir'] = "";
-$db['pusat_setting']['char_set'] = "utf8";
-$db['pusat_setting']['dbcollat'] = "utf8_general_ci";
-$db['pusat_setting']['swap_pre'] = "";
-$db['pusat_setting']['autoinit'] = TRUE;
-$db['pusat_setting']['stricton'] = FALSE;
-
 /* End of file database.php */
 /* Location: ./application/config/database.php */

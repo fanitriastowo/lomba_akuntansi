@@ -1,8 +1,8 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Login extends CI_Controller {
-    
-   function __construct(){
+
+   function __construct() {
       parent::__construct();
    }
 
@@ -14,12 +14,12 @@ class Login extends CI_Controller {
    }
 
    /**
-   * Post Login
-   */
+    * Post Login
+    */
    public function login_post() {
       // ambil value dari form login
       // username = no_pendaftaran; diambil dari database lain
-      $username = $this->input->post('username'); 
+      $username = $this->input->post('username');
       $password = 'CALON123456789';
 
       // koneksi pusat
@@ -28,25 +28,25 @@ class Login extends CI_Controller {
 
       // check user di pusat
       if ($user_from_pusat != NULL) {
-      
+
          // cancel jika user sudah pernah ujian
          if ($user_from_pusat->stsujian == 2) {
-             $this->session->set_flashdata('sudah_ujian', TRUE);
-             redirect('login');
+            $this->session->set_flashdata('sudah_ujian', TRUE);
+            redirect('login');
          }
 
          // check jika di database local sudah ada user-nya
          if ($this->ion_auth->login($username, $password)) {
             redirect('login/persiapan');
 
-         // check di database pusat dan register ke lokal
+            // check di database pusat dan register ke lokal
          } else if ($user_from_pusat->id == $username) {
             $username = $user_from_pusat->id;
             $password = 'CALON123456789';
             $email = 'calon@calon.com';
             $additional_data = array(
-               'first_name' => 'Calon',
-               'last_name' => 'Mahasiswa',
+                'first_name' => 'Calon',
+                'last_name' => 'Mahasiswa',
             );
             $group_ids = array('2');
             $this->ion_auth->register($username, $password, $email, $additional_data, $group_ids);
@@ -61,13 +61,13 @@ class Login extends CI_Controller {
    }
 
    /**
-   * menampilkan halaman persiapan pengerjaan soal
-   */
+    * menampilkan halaman persiapan pengerjaan soal
+    */
    public function persiapan() {
       // redirect ke login jika belum
       if (!$this->ion_auth->logged_in()) {
          redirect('login');
-      } 
+      }
 
       // ambil principal
       $principal = $this->ion_auth->user()->row();
@@ -77,7 +77,7 @@ class Login extends CI_Controller {
       $user_from_pusat = $this->pusat_m->get_by_id($principal->username);
       $user_from_pusat->pil1 = $this->pusat_m->get_namaprodi_by_id($user_from_pusat->pil1);
       $user_from_pusat->pil2 = $this->pusat_m->get_namaprodi_by_id($user_from_pusat->pil2);
-      
+
       $this->load->model('ujian_m');
       $is_idle = $this->ujian_m->get_by('user_id', $principal->id, TRUE);
 
@@ -86,20 +86,20 @@ class Login extends CI_Controller {
          // simpan principal id ke ujian
          $save_ujian = array('user_id' => $principal->id);
          $this->ujian_m->save($save_ujian);
-         
+
       } else {
          // jika sedang ujian (status idle)
          if ($is_idle->idle == 1) {
 
             // waktu_sekarang + (90 menit - (autosave_time - waktu_mulai))
             $formula = (
-               time() + 
-               (5400 - 
-                  (
-                     strtotime($is_idle->autosave_time) - 
-                     strtotime($is_idle->waktu_mulai)
-                  )
-               )
+                time() +
+                (5400 -
+                    (
+                        strtotime($is_idle->autosave_time) -
+                        strtotime($is_idle->waktu_mulai)
+                    )
+                )
             );
 
             // update table ujian dengan waktu selesai yang diganti

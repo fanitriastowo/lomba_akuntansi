@@ -26,7 +26,7 @@ date_default_timezone_set('Asia/Jakarta');
 		case 'localhost':
 			$env = 'development';
 			break;
-		case 'cbt.pmb.ump.ac.id':
+		case 'lombaakuntansi.ump.ac.id':
 			$env = 'production';
 			break;
 		default:
@@ -55,7 +55,7 @@ if (defined('ENVIRONMENT'))
 		case 'testing':
 		case 'production':
 			error_reporting(0);
-			//error_reporting(E_ALL | E_STRICT);
+			error_reporting(E_ALL | E_STRICT);
 		break;
 
 		default:

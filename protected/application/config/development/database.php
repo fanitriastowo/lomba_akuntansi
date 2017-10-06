@@ -51,9 +51,9 @@ $active_record = TRUE;
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = 'root';
-$db['default']['database'] = 'cbt';
+$db['default']['database'] = 'lomba_akuntansi';
 $db['default']['dbdriver'] = 'mysqli';
-$db['default']['dbprefix'] = 'cbt_';
+$db['default']['dbprefix'] = 'akuntansi_';
 $db['default']['pconnect'] = FALSE;
 $db['default']['db_debug'] = TRUE;
 $db['default']['cache_on'] = FALSE;
@@ -63,38 +63,6 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
-
-$db['pusat']['hostname'] = "localhost";
-$db['pusat']['username'] = "root";
-$db['pusat']['password'] = "root";
-$db['pusat']['database'] = "pmb2016";
-$db['pusat']['dbdriver'] = "mysqli";
-$db['pusat']['dbprefix'] = "";
-$db['pusat']['pconnect'] = FALSE;
-$db['pusat']['db_debug'] = FALSE;
-$db['pusat']['cache_on'] = FALSE;
-$db['pusat']['cachedir'] = "";
-$db['pusat']['char_set'] = "utf8";
-$db['pusat']['dbcollat'] = "utf8_general_ci";
-$db['pusat']['swap_pre'] = "";
-$db['pusat']['autoinit'] = TRUE;
-$db['pusat']['stricton'] = FALSE;
-
-$db['pusat_setting']['hostname'] = "localhost";
-$db['pusat_setting']['username'] = "root";
-$db['pusat_setting']['password'] = "root";
-$db['pusat_setting']['database'] = "pmbsetting";
-$db['pusat_setting']['dbdriver'] = "mysqli";
-$db['pusat_setting']['dbprefix'] = "";
-$db['pusat_setting']['pconnect'] = FALSE;
-$db['pusat_setting']['db_debug'] = FALSE;
-$db['pusat_setting']['cache_on'] = FALSE;
-$db['pusat_setting']['cachedir'] = "";
-$db['pusat_setting']['char_set'] = "utf8";
-$db['pusat_setting']['dbcollat'] = "utf8_general_ci";
-$db['pusat_setting']['swap_pre'] = "";
-$db['pusat_setting']['autoinit'] = TRUE;
-$db['pusat_setting']['stricton'] = FALSE;
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */
