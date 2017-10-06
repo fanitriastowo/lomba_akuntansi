@@ -1,4 +1,4 @@
-INSERT INTO `cbt_master_mapel` (`id`, `mapel`) VALUES
+INSERT INTO `akuntansi_master_mapel` (`id`, `mapel`) VALUES
    (1, 'IPA'),
    (2, 'Bahasa Indonesia IPS'),
    (3, 'IPS'),
