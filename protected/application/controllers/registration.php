@@ -41,9 +41,40 @@ class registration extends CI_Controller {
       $asal_sekolah = $this->input->post('asal_sekolah');
       $jenis_sekolah = $this->input->post('jenis_sekolah');
       $password = $this->input->post('password');
-      $confirm_password = $this->input->post('confirm_password');
       $pertanyaan = $this->input->post('pertanyaan');
       $jawaban = $this->input->post('jawaban');
+
+      // generate ID
+      $generated_id = $this->__generate_id($jenis_sekolah);
+
+      // photo field
+      // Set filename
+      $config['file_name'] = date('dmy') . $generated_id;
+      $config['upload_path'] = 'uploads/users/';
+      $config['allowed_types'] = 'gif|jpg|png|jpeg';
+      $config['max_size'] = '3096';
+      $config['max_height'] = '4098';
+      $config['max_width'] = '4098';
+      $this->load->library('upload', $config);
+      $photo = NULL;
+
+      if ($this->upload->do_upload('photo')) {
+
+         $photo = $this->upload->data();
+         if ($photo['image_width'] > 250) {
+            $configResize = array(
+                'image_library' => 'gd',
+                'source_image' => $photo['full_path'],
+                'width' => 250,
+                'height' => 250,
+                'maintain_ratio' => FALSE
+            );
+
+            $this->load->library('image_lib', $configResize);
+            $this->image_lib->resize();
+         }
+      }
+
 
       $additional_data = array(
           'nama' => $nama,
@@ -62,15 +93,16 @@ class registration extends CI_Controller {
           'asal_sekolah' => $asal_sekolah,
           'jenis_sekolah' => $jenis_sekolah,
           'pertanyaan' => $pertanyaan,
-          'jawaban' => $jawaban
+          'jawaban' => $jawaban,
+          'photo' => date('dmy') . $generated_id . $photo['file_ext']
       );
 
-      $generated_id = $this->__generate_id($jenis_sekolah);
       $result = '';
       if (!$this->ion_auth->username_check($generated_id)) {
          $result = $this->ion_auth->register($generated_id, $password, null, $additional_data, 'members');
       } else {
-         $result = $this->ion_auth->register($this->__generate_id($jenis_kelamin), $password, null, $additional_data, 'members');
+         $generated_id = $this->__generate_id($jenis_sekolah);
+         $result = $this->ion_auth->register($generated_id, $password, null, $additional_data, 'members');
       }
 
       if ($result) {

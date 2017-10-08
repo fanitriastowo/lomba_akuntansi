@@ -26,7 +26,7 @@
       </div>
    <?php endif ?>
 
-   <?php echo form_open('registration/registrasi'); ?>
+   <?php echo form_open_multipart('registration/registrasi', 'id="registration"'); ?>
 
    <div class="form-group">
       <?php echo form_input(array('id' => 'nama', 'name' => 'nama', 'class' => 'form-control', 'placeholder' => 'Nama Lengkap')); ?>
@@ -231,12 +231,19 @@
 
 
    <div class="form-group">
-      <?php echo form_textarea(array('id' => 'pertanyaan', 'name' => 'pertanyaan', 'class' => 'form-control', 'placeholder' => 'Silahkan masukan pertanyaan yang hanya Anda yang mengetahui jawabannya. Hal ini agar memastikan keamanan akun', 'rows' => 2, 'style' => 'resize: none;')); ?>
+      <?php echo form_textarea(array('id' => 'pertanyaan', 'name' => 'pertanyaan', 'class' => 'form-control',
+          'placeholder' => 'Silahkan masukan pertanyaan yang hanya Anda yang mengetahui jawabannya. Hal ini agar memastikan keamanan akun',
+          'rows' => 2, 'style' => 'resize: none;')); ?>
    </div>
 
 
    <div class="form-group">
       <?php echo form_input(array('id' => 'jawaban', 'name' => 'jawaban', 'class' => 'form-control', 'placeholder' => 'Jawaban dari pertanyaan diatas')); ?>
+   </div>
+
+   <div class="form-group">
+      <input type="file" name="photo" id="photo" class="form-control"
+             accept="image/x-png, image/gif, image/jpeg, image/jpg">
    </div>
 
    <div class="checkbox">
@@ -247,7 +254,7 @@
 
    <button type="submit" class="btn btn-primary">Registrasi</button>
 
-   </form>
+   <?php echo form_close(); ?>
 </div>
 
 <?php $this->load->view('template/js'); ?>

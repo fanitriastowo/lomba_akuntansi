@@ -36,8 +36,7 @@ class Migration_create_users extends CI_Migration {
                 `created_on` INT(11) UNSIGNED NOT NULL,
                 `last_login` INT(11) UNSIGNED DEFAULT NULL,
                 `active` TINYINT(1) UNSIGNED DEFAULT NULL,
-                `first_name` VARCHAR(50) NOT NULL,
-                `last_name` VARCHAR(50) NOT NULL,
+                `nama` VARCHAR(200) NOT NULL,
                 `company` VARCHAR(100) DEFAULT '-',
                 `phone` VARCHAR(20) NOT NULL,
                 `tempat_lahir` VARCHAR(150) NOT NULL,
@@ -54,6 +53,7 @@ class Migration_create_users extends CI_Migration {
                 `jenis_sekolah` VARCHAR(5) NOT NULL,
                 `pertanyaan` TEXT NOT NULL,
                 `jawaban` TEXT NOT NULL,
+                `photo` VARCHAR(50) DEFAULT 'blank.jpg',
                 PRIMARY KEY (`id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
         ";
@@ -92,10 +92,10 @@ class Migration_create_users extends CI_Migration {
         ";
 
       $insert_users = "
-            INSERT INTO `akuntansi_users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `tempat_lahir`,  `jalan`, `no_rumah`, `rt`, `rw`, `desa`, `kecamatan`, `kabupaten`, `provinsi`, `asal_sekolah`, `jenis_sekolah`, `pertanyaan`, `jawaban`) VALUES
+            INSERT INTO `akuntansi_users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `created_on`, `last_login`, `active`, `nama`, `company`, `phone`, `tempat_lahir`,  `jalan`, `no_rumah`, `rt`, `rw`, `desa`, `kecamatan`, `kabupaten`, `provinsi`, `asal_sekolah`, `jenis_sekolah`, `pertanyaan`, `jawaban`) VALUES
                 (
                 '1',0x7f000001,'administrator','59beecdf7fc966e2f17fd8f65a4a9aeb09d4a3d4','9462e8eee0','admin@admin.com','',NULL,'1268889823',
-                '1268889823','1', 'Admin','istrator','ADMIN','0', 'BANYUMAS', 'jln. Tambangan', '39', '02', '01', 'Patikraja', 'Patikraja', 'Banyumas',
+                '1268889823','1', 'Admin', 'ADMIN','0', 'BANYUMAS', 'jln. Tambangan', '39', '02', '01', 'Patikraja', 'Patikraja', 'Banyumas',
                 'Jawa Tengah', 'SMK Negeri 2 Purwokerto', 'SMK', 'Siapa nama drummer favorite?', 'Danny Carey'
                 );
         ";
