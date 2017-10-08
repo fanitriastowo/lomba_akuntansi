@@ -29,7 +29,6 @@
 
 <div class="container">
 
-
    <!-- Error import Notification -->
    <?php if (!empty($this->session->flashdata('succes_registration'))): ?>
       <div class="alert alert-success" role="alert">
@@ -67,21 +66,26 @@
 
    <hr>
 
+   <img class="img-thumbnail" width="100px" src="<?php echo base_url('uploads/users/' . $model->photo); ?>"
+        alt="Photo Profile">
+
+   <hr>
+
    <table>
       <tr>
          <td width="25%">ID</td>
          <td width="10%" class="text-center">:</td>
-         <td width="65%"><strong>{ID}</strong></td>
+         <td width="65%"><strong><?php echo $model->username; ?></strong></td>
       </tr>
       <tr>
          <td width="25%">Nama</td>
          <td width="10%" class="text-center">:</td>
-         <td width="65%"><strong>{Nama}</strong></td>
+         <td width="65%"><strong><?php echo $model->nama; ?></strong></td>
       </tr>
       <tr>
          <td width="25%">Asal Sekolah</td>
          <td width="10%" class="text-center">:</td>
-         <td width="65%"><strong>{asal_sekolah}</strong></td>
+         <td width="65%"><strong><?php echo $model->asal_sekolah; ?></strong></td>
       </tr>
    </table>
 

@@ -107,15 +107,11 @@ class registration extends CI_Controller {
 
       if ($result) {
          $this->session->set_flashdata('succes_registration', 'Registrasi Berhasil');
-         redirect('registration/cetak_kwitansi');
+         redirect('home/cetak_kwitansi');
       } else {
          $this->session->set_flashdata('error_registration', $this->ion_auth->errors());
          redirect('registration');
       }
-   }
-
-   public function cetak_kwitansi() {
-      $this->load->view('kwitansi');
    }
 
    /**
