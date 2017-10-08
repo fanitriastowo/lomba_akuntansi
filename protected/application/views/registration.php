@@ -16,6 +16,16 @@
    <h1 class="text-center">Registrasi</h1>
    <p class="text-center">*Silahkan isi form registrasi dibawah ini untuk mendaftar</p>
 
+   <!-- Error import Notification -->
+   <?php if (!empty($this->session->flashdata('error_registration'))): ?>
+      <div class="alert alert-danger" role="alert">
+         <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+         </button>
+         <?php echo $this->session->flashdata('error_import'); ?>
+      </div>
+   <?php endif ?>
+
    <?php echo form_open('registration/registrasi'); ?>
 
    <div class="form-group">

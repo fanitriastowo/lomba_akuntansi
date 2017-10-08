@@ -63,15 +63,29 @@ class registration extends CI_Controller {
           'pertanyaan' => $pertanyaan,
           'jawaban' => $jawaban
       );
-      $this->ion_auth->register($this->__generate_id(), $password, null, $additional_data, 2);
-      redirect('registration/cetak_kwitansi');
+      $this->ion_auth->register($this->__generate_id($jenis_kelamin), $password, null, $additional_data, 2);
+
+      $this->session->set_flashdata('error_registration', $this->ion_auth->errors());
+
+      redirect('registration');
    }
 
    public function cetak_kwitansi() {
       $this->load->view('kwitansi');
    }
 
-   private function __generate_id() {
-      return '1234-1';
+   /**
+    * @param $jenis_sekolah
+    * @return string ID
+    */
+   private function __generate_id($jenis_sekolah) {
+      $number = rand(1000, 9999);
+      $sma_smk = 1;
+      if ($jenis_sekolah == 'SMA') {
+         $sma_smk = 1;
+      } else {
+         $sma_smk = 2;
+      }
+      return "{$number}-{$sma_smk}";
    }
 }
