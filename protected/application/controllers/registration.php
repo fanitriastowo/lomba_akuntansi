@@ -37,7 +37,7 @@ class registration extends CI_Controller {
       $kabupaten = $this->input->post('kabupaten');
       $provinsi = $this->input->post('provinsi');
       $asal_sekolah = $this->input->post('asal_sekolah');
-      $smk = $this->input->post('smk');
+      $jenis_sekolah = $this->input->post('smk');
       $sma = $this->input->post('sma');
       $password = $this->input->post('password');
       $confirm_password = $this->input->post('confirm_password');
@@ -59,11 +59,17 @@ class registration extends CI_Controller {
           'kabupaten' => $kabupaten,
           'provinsi' => $provinsi,
           'asal_sekolah' => $asal_sekolah,
-          'jenis_sekolah' => $smk,
+          'jenis_sekolah' => $jenis_sekolah,
           'pertanyaan' => $pertanyaan,
           'jawaban' => $jawaban
       );
-      $this->ion_auth->register($this->__generate_id($jenis_kelamin), $password, null, $additional_data, 2);
+
+      $generated_id = $this->__generate_id($jenis_sekolah);
+      if (!$this->ion_auth->username_check('7842-2')) {
+         $this->ion_auth->register($generated_id, $password, null, $additional_data, 2);
+      } else {
+         $this->ion_auth->register($this->__generate_id($jenis_kelamin), $password, null, $additional_data, 2);
+      }
 
       $this->session->set_flashdata('error_registration', $this->ion_auth->errors());
 
@@ -79,6 +85,7 @@ class registration extends CI_Controller {
     * @return string ID
     */
    private function __generate_id($jenis_sekolah) {
+
       $number = rand(1000, 9999);
       $sma_smk = 1;
       if ($jenis_sekolah == 'SMA') {
