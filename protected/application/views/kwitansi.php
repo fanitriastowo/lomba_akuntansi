@@ -2,7 +2,28 @@
 <html lang="en">
 <head>
    <?php $this->load->view('template/css'); ?>
-   <title>Document</title>
+   <title>Kwitansi Pembayaran Lomba Akuntansi UMP 2017</title>
+
+   <style>
+      body {
+         background-image: none;
+         background-repeat: no-repeat;
+         font-family: "Times New Roman", Times, serif !important;
+         font-size: 10pt;
+      }
+
+      .kop {
+         font-size: 12pt;
+      }
+
+      .alamat {
+         font-size: 7pt;
+      }
+
+      .container {
+         width: 640px;
+      }
+   </style>
 </head>
 <body>
 
@@ -19,60 +40,67 @@
       </div>
    <?php endif ?>
 
-   <table style="border: hidden">
+   <table>
       <tr>
-         <td>Logo</td>
-         <td>
-            <p style="text-align: center">FAKULTAS EKONOMI DAN BISNIS</p>
-            <p style="text-align: center">UNIVERSITAS MUHAMMADIYAH PURWOKERTO</p>
-            <p style="text-align: center">Jln. Raya Dukuhwaluh Po Box 202 Kembaran Banyumas (0281) 636751</p>
-         </td>
-      </tr>
-      <tr>
-         <td>
-            <p>Terima Kasih telah melakukan registrasi</p>
-         </td>
-      </tr>
-      <tr>
-         <td>
-            <p>Silahkan simpan dan cetak bukti registrasi</p>
+         <td width="20%"><img width="70%" src="<?php echo site_url('assets/images/logo.gif') ?>"></td>
+         <td width="80%" class="text-center kop">
+            <strong>
+               <span>FAKULTAS EKONOMI DAN BISNIS</span><br>
+               <span>UNIVERSITAS MUHAMMADIYAH PURWOKERTO</span><br>
+               <span class="alamat">
+                  Kampus 1: Jl. Raya Dukuhwaluh PO. Box 202 Purwokerto 53182
+                  Telp. (0281) 636751, 630463 Fax. (0281) 637239 <br>
+                  Kampus 2: Jl. Letjen Soepardjo Roestam Km 7 PO. Box 229 Purwokerto
+                  Telp. (0281) 6844252, 6844253Fax. (0281) 637239
+               </span>
+            </strong>
          </td>
       </tr>
    </table>
 
    <hr>
 
-   <table style="border: hidden">
+   <div class="text-center">
+      <span>Terima Kasih telah melakukan registrasi</span><br>
+      <span>Silahkan simpan dan cetak bukti registrasi</span>
+   </div>
+
+   <hr>
+
+   <table>
       <tr>
-         <td>ID</td>
-         <td>:</td>
-         <td>{ID}</td>
+         <td width="25%">ID</td>
+         <td width="10%" class="text-center">:</td>
+         <td width="65%"><strong>{ID}</strong></td>
       </tr>
       <tr>
-         <td>Nama</td>
-         <td>:</td>
-         <td>{nama}</td>
+         <td width="25%">Nama</td>
+         <td width="10%" class="text-center">:</td>
+         <td width="65%"><strong>{Nama}</strong></td>
       </tr>
       <tr>
-         <td>Asal Sekolah</td>
-         <td>:</td>
-         <td>{asal_sekolah}</td>
+         <td width="25%">Asal Sekolah</td>
+         <td width="10%" class="text-center">:</td>
+         <td width="65%"><strong>{asal_sekolah}</strong></td>
       </tr>
    </table>
-   <p>silahkan transfer biaya pendaftaran sebesar Rp. 50.000,- ke rekening berikut:</p>
+
+   <span>silahkan transfer biaya pendaftaran sebesar <strong>Rp. 50.000,-</strong> ke rekening berikut:</span>
+   <br><br>
    <code>
       BRI KK UMP Purwokerto
-      a.n. Nur Isna Inayati
+      a.n. Nur Isna Inayati :
       1792-01-0001116-53-1
    </code>
 
    <hr>
 
-   <p>Kemudian silahkan upload foto bukti transfer ke lombaakuntansi.ump.ac.id
-      dengan cara login menggunakan akun masing masing</p>
+   <span>Kemudian silahkan upload foto bukti transfer ke
+      <a target="_blank" href="http://www.lombaakuntansi.ump.ac.id">lombaakuntansi.ump.ac.id</a>
+      dengan cara login menggunakan akun masing masing</span>
 
    <hr>
-   <p>atau menghubungi Sandi : 08-222-1834-636</p>
+   <span>atau menghubungi Sandi : 08-222-1834-636</span>
 
 </div>
 <?php $this->load->view('template/js'); ?>
