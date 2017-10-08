@@ -64,7 +64,11 @@ class registration extends CI_Controller {
           'jawaban' => $jawaban
       );
       $this->ion_auth->register($this->__generate_id(), $password, null, $additional_data, 2);
-      redirect('registration');
+      redirect('registration/cetak_kwitansi');
+   }
+
+   public function cetak_kwitansi() {
+      $this->load->view('kwitansi');
    }
 
    private function __generate_id() {

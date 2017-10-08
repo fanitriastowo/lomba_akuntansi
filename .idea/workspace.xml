@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c6aee6c-9269-496c-9837-e3b6619abfcf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/application/models/pusat_m.php" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/application/views/kwitansi.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/selenium_test/form_registrasi.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/application/controllers/registration.php" afterPath="$PROJECT_DIR$/protected/application/controllers/registration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/application/migrations/004_create_users.php" afterPath="$PROJECT_DIR$/protected/application/migrations/004_create_users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/application/models/jawaban_m.php" afterPath="$PROJECT_DIR$/protected/application/models/jawaban_m.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/application/models/jawaban_quisioner_m.php" afterPath="$PROJECT_DIR$/protected/application/models/jawaban_quisioner_m.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/application/models/mastermapel_paketsoal_jointable_m.php" afterPath="$PROJECT_DIR$/protected/application/models/mastermapel_paketsoal_jointable_m.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/application/models/skor_m.php" afterPath="$PROJECT_DIR$/protected/application/models/skor_m.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/application/models/soal_m.php" afterPath="$PROJECT_DIR$/protected/application/models/soal_m.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/application/models/ujian_m.php" afterPath="$PROJECT_DIR$/protected/application/models/ujian_m.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/application/views/registration.php" afterPath="$PROJECT_DIR$/protected/application/views/registration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/application/views/template/css.php" afterPath="$PROJECT_DIR$/protected/application/views/template/css.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/sparks/ion_auth/2.5.0/config/ion_auth.php" afterPath="$PROJECT_DIR$/protected/sparks/ion_auth/2.5.0/config/ion_auth.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,12 +36,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="registration.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/application/controllers/registration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="58" column="36" lean-forward="true" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+            <state relative-caret-position="712">
+              <caret line="57" column="31" lean-forward="false" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kwitansi.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/application/views/kwitansi.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="74" lean-forward="false" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#2;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,6 +102,7 @@
         <option value="$PROJECT_DIR$/protected/application/models/jawaban_quisioner_m.php" />
         <option value="$PROJECT_DIR$/protected/application/models/jawaban_m.php" />
         <option value="$PROJECT_DIR$/protected/application/controllers/registration.php" />
+        <option value="$PROJECT_DIR$/protected/application/views/kwitansi.php" />
       </list>
     </option>
   </component>
@@ -110,10 +117,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="23" />
-    <option name="y" value="19" />
-    <option name="width" value="1395" />
-    <option name="height" value="863" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1456" />
+    <option name="height" value="916" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -265,32 +272,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lomba_akuntansi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lomba_akuntansi" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -505,18 +486,18 @@
       <workItem from="1507282014208" duration="3635000" />
       <workItem from="1507300225442" duration="5701000" />
       <workItem from="1507386174983" duration="6156000" />
-      <workItem from="1507418742874" duration="4105000" />
+      <workItem from="1507418742874" duration="7124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22055000" />
+    <option name="totallyTimeSpent" value="25074000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="23" y="19" width="1395" height="863" extended-state="0" />
+    <frame x="-8" y="-8" width="1456" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31385767" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30014327" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32737276" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -547,14 +528,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/application/views/registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="6" lean-forward="false" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/application/views/template/css.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -948,9 +921,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/application/controllers/registration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="58" column="36" lean-forward="true" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+        <state relative-caret-position="712">
+          <caret line="57" column="31" lean-forward="false" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/application/views/kwitansi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="74" lean-forward="false" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
