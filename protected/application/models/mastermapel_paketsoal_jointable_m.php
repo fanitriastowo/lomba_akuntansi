@@ -2,7 +2,7 @@
 
 class Mastermapel_paketsoal_jointable_m extends MY_Model {
    
-   protected $_table_name = 'cbt_mastermapel_paketsoal_jointable';
+   protected $_table_name = 'akuntansi_mastermapel_paketsoal_jointable';
    protected $_order_by = 'id';
 
    function __construct() {

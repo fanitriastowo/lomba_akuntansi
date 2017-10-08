@@ -2,7 +2,7 @@
 
 class Skor_m extends MY_Model {
    
-   protected $_table_name = 'cbt_skor';
+   protected $_table_name = 'akuntansi_skor';
    protected $_order_by = 'id';
 
    function __construct() {

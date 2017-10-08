@@ -2,7 +2,7 @@
 
 class Soal_m extends MY_Model {
 
-   protected $_table_name = 'cbt_soal';
+   protected $_table_name = 'akuntansi_soal';
    protected $_order_by = 'id';
 
    function __construct(){

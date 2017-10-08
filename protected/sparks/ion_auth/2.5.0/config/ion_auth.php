@@ -31,10 +31,10 @@ $config['collections']['login_attempts'] = 'login_attempts';
 | -------------------------------------------------------------------------
 | Database table names.
 */
-$config['tables']['users']           = 'cbt_users';
-$config['tables']['groups']          = 'cbt_groups';
-$config['tables']['users_groups']    = 'cbt_users_groups';
-$config['tables']['login_attempts']  = 'cbt_login_attempts';
+$config['tables']['users']           = 'akuntansi_users';
+$config['tables']['groups']          = 'akuntansi_groups';
+$config['tables']['users_groups']    = 'akuntansi_users_groups';
+$config['tables']['login_attempts']  = 'akuntansi_login_attempts';
 
 /*
  | Users table column and Group table column you want to join WITH.

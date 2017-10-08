@@ -1,0 +1,184 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 2,
+  "steps": [
+    {
+      "type": "get",
+      "url": "http://localhost/lomba_akuntansi/public/registration"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "nama"
+      }
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "nama"
+      },
+      "text": "Fani Triastowo"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "jenis_kelamin"
+      },
+      "text": "Laki-laki"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "tempat_lahir"
+      },
+      "text": "Banyumas"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "no_handphone"
+      },
+      "text": "085291070216"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "jalan"
+      },
+      "text": "Tambangan"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "no_rumah"
+      },
+      "text": "39"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "rt"
+      },
+      "text": "02"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "rw"
+      },
+      "text": "01"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "desa"
+      },
+      "text": "Patikaraja"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "kecamatan"
+      },
+      "text": "Patikraja"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "kabupaten"
+      },
+      "text": "Banyumas"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "provinsi"
+      },
+      "text": "Jawa Tengah"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "asal_sekolah"
+      },
+      "text": "SMK NEGERI 2 Purwokerto"
+    },
+    {
+      "type": "sendKeysToElement",
+      "locator": {
+        "type": "name",
+        "value": "sma"
+      },
+      "text": "\\9"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "name",
+        "value": "smk"
+      },
+      "text": "SMK"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "password"
+      },
+      "text": "123"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "confirm_password"
+      },
+      "text": "123"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "pertanyaan"
+      },
+      "text": "Siapa Hacker "
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "pertanyaan"
+      },
+      "text": "Siapa Hacker terbaik sedunia"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "jawaban"
+      },
+      "text": "Fani Triastowo"
+    }
+  ],
+  "data": {
+    "configs": {},
+    "source": "none"
+  },
+  "inputs": [],
+  "timeoutSeconds": 60
+}

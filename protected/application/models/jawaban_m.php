@@ -2,7 +2,7 @@
 
 class Jawaban_m extends MY_Model{
 
-   protected $_table_name = 'cbt_jawaban';
+   protected $_table_name = 'akuntansi_jawaban';
    protected $_order_by = 'id';
 
    function __construct(){

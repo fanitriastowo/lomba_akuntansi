@@ -2,7 +2,7 @@
 
 class Ujian_m extends MY_Model {
    
-   protected $_table_name = 'cbt_ujian';
+   protected $_table_name = 'akuntansi_ujian';
    protected $_order_by = 'id';
 
    function __construct() {
