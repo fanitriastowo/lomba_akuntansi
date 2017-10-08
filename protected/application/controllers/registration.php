@@ -27,6 +27,8 @@ class registration extends CI_Controller {
       $jenis_kelamin = $this->input->post('jenis_kelamin');
       $tempat_lahir = $this->input->post('tempat_lahir');
       $tanggal_lahir = $this->input->post('tanggal_lahir');
+      $bulan_lahir = $this->input->post('bulan_lahir');
+      $tahun_lahir = $this->input->post('tahun_lahir');
       $no_handphone = $this->input->post('no_handphone');
       $jalan = $this->input->post('jalan');
       $no_rumah = $this->input->post('no_rumah');
@@ -37,8 +39,7 @@ class registration extends CI_Controller {
       $kabupaten = $this->input->post('kabupaten');
       $provinsi = $this->input->post('provinsi');
       $asal_sekolah = $this->input->post('asal_sekolah');
-      $jenis_sekolah = $this->input->post('smk');
-      $sma = $this->input->post('sma');
+      $jenis_sekolah = $this->input->post('jenis_sekolah');
       $password = $this->input->post('password');
       $confirm_password = $this->input->post('confirm_password');
       $pertanyaan = $this->input->post('pertanyaan');
@@ -48,7 +49,7 @@ class registration extends CI_Controller {
           'nama' => $nama,
           'jenis_kelamin' => $jenis_kelamin,
           'tempat_lahir' => $tempat_lahir,
-          'tanggal_lahir' => $tanggal_lahir,
+          'tanggal_lahir' => "{$tahun_lahir}-{$bulan_lahir}-{$tanggal_lahir}",
           'phone' => $no_handphone,
           'jalan' => $jalan,
           'no_rumah' => $no_rumah,
