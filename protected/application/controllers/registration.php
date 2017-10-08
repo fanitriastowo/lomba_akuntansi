@@ -49,7 +49,7 @@ class registration extends CI_Controller {
           'jenis_kelamin' => $jenis_kelamin,
           'tempat_lahir' => $tempat_lahir,
           'tanggal_lahir' => $tanggal_lahir,
-          'no_handphone' => $no_handphone,
+          'phone' => $no_handphone,
           'jalan' => $jalan,
           'no_rumah' => $no_rumah,
           'rt' => $rt,
@@ -65,15 +65,20 @@ class registration extends CI_Controller {
       );
 
       $generated_id = $this->__generate_id($jenis_sekolah);
-      if (!$this->ion_auth->username_check('7842-2')) {
-         $this->ion_auth->register($generated_id, $password, null, $additional_data, 2);
+      $result = '';
+      if (!$this->ion_auth->username_check($generated_id)) {
+         $result = $this->ion_auth->register($generated_id, $password, null, $additional_data, 'members');
       } else {
-         $this->ion_auth->register($this->__generate_id($jenis_kelamin), $password, null, $additional_data, 2);
+         $result = $this->ion_auth->register($this->__generate_id($jenis_kelamin), $password, null, $additional_data, 'members');
       }
 
-      $this->session->set_flashdata('error_registration', $this->ion_auth->errors());
-
-      redirect('registration');
+      if ($result) {
+         $this->session->set_flashdata('succes_registration', 'Registrasi Berhasil');
+         redirect('registration/cetak_kwitansi');
+      } else {
+         $this->session->set_flashdata('error_registration', $this->ion_auth->errors());
+         redirect('registration');
+      }
    }
 
    public function cetak_kwitansi() {
