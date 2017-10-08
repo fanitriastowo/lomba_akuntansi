@@ -242,7 +242,7 @@
    </div>
 
    <div class="form-group">
-      <input type="file" name="photo" id="photo" class="form-control"
+      <input type="file" name="photo" id="photo"
              accept="image/x-png, image/gif, image/jpeg, image/jpg">
    </div>
 
@@ -258,5 +258,6 @@
 </div>
 
 <?php $this->load->view('template/js'); ?>
+
 </body>
 </html>

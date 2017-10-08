@@ -1,13 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport"
-         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Document</title>
+
+   <?php $this->load->view('template/css'); ?>
+   <title>Selamat datang di Lomba Akuntansi UMP 2017</title>
 </head>
 <body>
+
+<div class="container">
+
    <h1>Home</h1>
+   <a href="<?php echo site_url('login'); ?>" class="btn btn-primary btn-xs">Login</a>
+
+</div>
+
+<?php $this->load->view('template/js'); ?>
 </body>
 </html>
