@@ -11,9 +11,9 @@ class Login extends CI_Controller {
     */
    public function index() {
       // redirect if already logged in
-      if ($this->ion_auth->logged_in()) {
-         redirect('user/profile');
-      }
+//      if ($this->ion_auth->logged_in()) {
+//         redirect('akun');
+//      }
       $this->load->view('login');
    }
 

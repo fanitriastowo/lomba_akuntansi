@@ -14,6 +14,11 @@ class akun extends CI_Controller {
 
    public function index() {
       $this->load->view("akun");
+//      if ($this->ion_auth->logged_in) {
+//         $this->load->view("akun");
+//      } else {
+//         redirect('login');
+//      }
    }
 
    public function cetak_kwitansi() {

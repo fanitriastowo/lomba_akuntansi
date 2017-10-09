@@ -100,14 +100,16 @@ class registration extends CI_Controller {
       $result = '';
       if (!$this->ion_auth->username_check($generated_id)) {
          $result = $this->ion_auth->register($generated_id, $password, null, $additional_data, 'members');
+         $this->ion_auth->login($generated_id, $password);
       } else {
          $generated_id = $this->__generate_id($jenis_sekolah);
          $result = $this->ion_auth->register($generated_id, $password, null, $additional_data, 'members');
+         $this->ion_auth->login($generated_id, $password);
       }
 
       if ($result) {
          $this->session->set_flashdata('succes_registration', 'Registrasi Berhasil');
-         redirect('home/cetak_kwitansi');
+         redirect('akun/cetak_kwitansi');
       } else {
          $this->session->set_flashdata('error_registration', $this->ion_auth->errors());
          redirect('registration');
