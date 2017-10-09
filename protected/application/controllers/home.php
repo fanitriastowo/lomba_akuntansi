@@ -17,9 +17,4 @@ class home extends CI_Controller {
       $this->load->view("home");
    }
 
-   public function cetak_kwitansi() {
-      $prinsipal = $this->ion_auth->user()->row();
-      $model['model'] = $prinsipal;
-      $this->load->view('kwitansi', $model);
-   }
 }

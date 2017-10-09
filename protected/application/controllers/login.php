@@ -26,7 +26,7 @@ class Login extends CI_Controller {
 
       // check credential dan jika buka administrator
       if ($this->ion_auth->login($username, $password)) {
-         redirect('home');
+         redirect('akun');
       }
 
       // jika tidak terdaftar
@@ -54,5 +54,5 @@ class Login extends CI_Controller {
 
 }
 
-/* End of file home.php */
-/* Location: ./application/controller/home.php */
+/* End of file akun.php */
+/* Location: ./application/controller/akun.php */

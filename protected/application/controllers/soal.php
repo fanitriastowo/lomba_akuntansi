@@ -160,5 +160,5 @@ class Soal extends CI_Controller {
 
 }
 
-/* End of file home.php */
-/* Location: ./application/controller/home.php */
+/* End of file akun.php */
+/* Location: ./application/controller/akun.php */
