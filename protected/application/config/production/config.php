@@ -22,7 +22,7 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://cbt.pmb.ump.ac.id/public';
+$config['base_url'] = 'http://lombaakuntansi.ump.ac.id/public';
 
 /*
 |--------------------------------------------------------------------------

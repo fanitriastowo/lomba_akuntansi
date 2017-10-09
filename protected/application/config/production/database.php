@@ -49,11 +49,11 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'pmbumpac_pmb';
-$db['default']['password'] = 'DBpmbUMP234';
-$db['default']['database'] = 'pmbumpac_cbt';
+$db['default']['username'] = 'lombaaku_ntansi';
+$db['default']['password'] = '085291070216';
+$db['default']['database'] = 'lombaaku_ntansi2017';
 $db['default']['dbdriver'] = 'mysqli';
-$db['default']['dbprefix'] = 'cbt_';
+$db['default']['dbprefix'] = 'akuntansi_';
 $db['default']['pconnect'] = FALSE;
 $db['default']['db_debug'] = TRUE;
 $db['default']['cache_on'] = FALSE;
