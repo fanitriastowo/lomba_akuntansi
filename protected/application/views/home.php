@@ -107,8 +107,15 @@
                                  <!-- content slide -->
                                  <div class="content-slide">
                                     <!-- Clock Countdown -->
-                                    <div id="clock-countdown" class="animated bounceInDown"
-                                         data-animation-delay="700"></div>
+                                    <!-- <div id="clock-countdown" class="animated bounceInDown"-->
+                                    <!--      data-animation-delay="700"></div>-->
+                                    <a class="btn btn-default" href="<?php echo site_url('registration')?>">Register Now</a>
+
+                                    <hr>
+
+                                    <p>Sudah registrasi?</p>
+                                    <a class="btn btn-default" href="<?php echo site_url('login')?>">Login</a>
+
 
                                     <!-- copyright -->
                                     <footer class="copy-right animated bounceInUp" data-animation-delay="700">
