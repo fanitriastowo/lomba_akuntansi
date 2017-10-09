@@ -20,7 +20,7 @@
       </div>
    <?php endif ?>
 
-   <?php echo form_open_multipart('registration/registrasi', 'id="registration" class="form-horizontal"'); ?>
+   <?php echo form_open_multipart('registration/registrasi', 'id="form-registration" class="form-horizontal"'); ?>
 
    <div class="form-group">
       <label for="nama" class="text-muted col-sm-2 control-label">Nama:</label>
@@ -49,9 +49,7 @@
 
    <div class="form-group">
       <label class="col-sm-2 control-label text-muted" for="tanggal_lahir">Tanggal Lahir</label>
-
       <div class="col-sm-10">
-
          <div class="form-inline">
             <select class="form-control" id="tanggal_lahir" name="tanggal_lahir">
                <option value="1">1</option>
@@ -311,6 +309,98 @@
 </div>
 
 <?php $this->load->view('template/js'); ?>
+<script type="text/javascript" src="<?php echo site_url('assets/js/jquery.validate.min.js'); ?>"></script>
+<script type="text/javascript">
+   $(document).ready(function () {
 
+      // Form Validation
+      $('#form-registration').validate({
+         rules: {
+            nama: {
+               required: true,
+               minlength: 3
+            },
+            tempat_lahir: {
+               required: true
+            },
+            phone: {
+               required: true,
+               min: 10,
+               number: true
+            },
+            asal_sekolah: {
+               required: true
+            },
+            jenis_sekolah: {
+               required: true
+            },
+            password: {
+               required: true,
+               minlength: 3
+            },
+            confirm_password: {
+               required: true,
+               minlength: 3,
+               equalTo: "#password"
+            },
+            pertanyaan: {
+               required: true,
+               minlength: 3
+            },
+            jawaban: {
+               required: true,
+               minlength: 3
+            }
+         },
+         messages: {
+            nama: {
+               required: "Nama harus diisi",
+               minlength: "Minimal 3 Karakter"
+            },
+            tempat_lahir: {
+               required: "Tempat lahir harus diisi"
+            },
+            phone: {
+               required: "Nomor Telepon harus diisi",
+               min: "Minimal 10 Karakter",
+               number: "Harus berupa angka"
+            },
+            asal_sekolah: {
+               required: "Asal sekolah harus diisi"
+            },
+            jenis_sekolah: {
+               required: "Jenis Sekolah harus diisi"
+            },
+            password: {
+               required: "Password harus diisi",
+               minlength: "Minimal 3 karakter"
+            },
+            confirm_password: {
+               required: "Confirm Password harus diisi",
+               minlength: "Minimal 3 karakter",
+               equalTo: "Password tidak sama"
+            },
+            pertanyaan: {
+               required: "Pertanyaan harus diisi",
+               minlength: "Minimal 3 karakter"
+            },
+            jawaban: {
+               required: "Jawaban harus diisi",
+               minlength: "minimal 3 karakter"
+            }
+         },
+         errorPlacement: function (error, element) {
+            var spot = $(element).closest('.form-group');
+            error.insertBefore(spot);
+         },
+         highlight: function (element) {
+            $(element).closest('.form-group').addClass('has-error');
+         },
+         unhighlight: function (element) {
+            $(element).closest('.form-group').removeClass('has-error');
+         }
+      });
+   });
+</script>
 </body>
 </html>
