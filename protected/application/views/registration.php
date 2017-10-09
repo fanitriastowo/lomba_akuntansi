@@ -3,12 +3,6 @@
 <head>
    <?php $this->load->view('template/css'); ?>
    <title>Document</title>
-
-   <style>
-      .container {
-         padding-bottom: 30px;
-      }
-   </style>
 </head>
 <body>
 <div class="container">
@@ -26,28 +20,39 @@
       </div>
    <?php endif ?>
 
-   <?php echo form_open_multipart('registration/registrasi', 'id="registration"'); ?>
+   <?php echo form_open_multipart('registration/registrasi', 'id="registration" class="form-horizontal"'); ?>
 
    <div class="form-group">
-      <?php echo form_input(array('id' => 'nama', 'name' => 'nama', 'class' => 'form-control', 'placeholder' => 'Nama Lengkap')); ?>
+      <label for="nama" class="text-muted col-sm-2 control-label">Nama:</label>
+      <div class="col-sm-10">
+         <?php echo form_input(array('id' => 'nama', 'name' => 'nama', 'class' => 'form-control', 'placeholder' => 'Nama Lengkap')); ?>
+      </div>
    </div>
 
    <div class="form-group">
-      <select class="form-control" name="jenis_kelamin">
-         <option value="L">Laki-laki</option>
-         <option value="P">Perempuan</option>
-      </select>
+      <label for="jenis_kelamin" class="text-muted col-sm-2 control-label">Jenis Kelamin:</label>
+      <div class="col-sm-10">
+         <select class="form-control" name="jenis_kelamin">
+            <option value="L">Laki-laki</option>
+            <option value="P">Perempuan</option>
+         </select>
+      </div>
    </div>
 
 
    <div class="form-group">
-      <?php echo form_input(array('id' => 'tempat_lahir', 'name' => 'tempat_lahir', 'class' => 'form-control', 'placeholder' => 'Tempat Lahir')); ?>
+      <label for="tempat_lahir" class="text-muted col-sm-2 control-label">Tempat Lahir:</label>
+      <div class="col-sm-10">
+         <?php echo form_input(array('id' => 'tempat_lahir', 'name' => 'tempat_lahir', 'class' => 'form-control', 'placeholder' => 'Tempat Lahir')); ?>
+      </div>
    </div>
 
-   <div class="row">
+   <div class="form-group">
+      <label class="col-sm-2 control-label text-muted" for="tanggal_lahir">Tanggal Lahir</label>
 
-      <div class="col-md-4">
-         <div class="form-group">
+      <div class="col-sm-10">
+
+         <div class="form-inline">
             <select class="form-control" id="tanggal_lahir" name="tanggal_lahir">
                <option value="1">1</option>
                <option value="2">2</option>
@@ -81,10 +86,6 @@
                <option value="30">30</option>
                <option value="31">31</option>
             </select>
-         </div>
-      </div>
-      <div class="col-md-4">
-         <div class="form-group">
             <select class="form-control" id="bulan_lahir" name="bulan_lahir">
                <option value="1">Januari</option>
                <option value="2">Februari</option>
@@ -99,10 +100,6 @@
                <option value="11">November</option>
                <option value="12">Desember</option>
             </select>
-         </div>
-      </div>
-      <div class="col-md-4">
-         <div class="form-group">
             <select class="form-control" id="tahun_lahir" name="tahun_lahir">
                <option value="2010">2010</option>
                <option value="2009">2009</option>
@@ -161,98 +158,154 @@
    </div>
 
    <div class="form-group">
-      <?php echo form_input(array('id' => 'no_handphone', 'name' => 'no_handphone', 'class' => 'form-control', 'placeholder' =>
-          'No Handphone')); ?>
+      <label for="no_handphone" class="text-muted col-sm-2 control-label">No Handphone:</label>
+      <div class="col-sm-10">
+         <?php echo form_input(array('id' => 'no_handphone', 'name' => 'no_handphone', 'class' => 'form-control', 'placeholder' =>
+             'No Handphone')); ?>
+      </div>
+   </div>
+
+   <div class="form-group">
+      <label for="jalan" class="text-muted col-sm-2 control-label">Jalan:</label>
+      <div class="col-sm-10">
+         <?php echo form_input(array('id' => 'jalan', 'name' => 'jalan', 'class' => 'form-control', 'placeholder' => 'Jalan')); ?>
+      </div>
+   </div>
+
+   <div class="form-group">
+      <label class="col-sm-2 control-label text-muted" for="no_rumah">No Rumah</label>
+      <div class="col-sm-2">
+         <div class="form-inline">
+            <?php echo form_input(array('id' => 'no_rumah', 'name' => 'no_rumah', 'class' => 'form-control', 'placeholder' => 'No Rumah')); ?>
+         </div>
+      </div>
+
+      <label class="col-sm-2 control-label text-muted" for="rt">RT</label>
+      <div class="col-sm-2">
+         <div class="form-inline">
+            <?php echo form_input(array('id' => 'rt', 'name' => 'rt', 'class' => 'form-control', 'placeholder' => 'RT')); ?>
+         </div>
+      </div>
+
+      <label class="col-sm-2 control-label text-muted" for="rw">RW</label>
+      <div class="col-sm-2">
+         <div class="form-inline">
+            <?php echo form_input(array('id' => 'rw', 'name' => 'rw', 'class' => 'form-control', 'placeholder' => 'RW')); ?>
+         </div>
+      </div>
    </div>
 
 
    <div class="form-group">
-      <?php echo form_input(array('id' => 'jalan', 'name' => 'jalan', 'class' => 'form-control', 'placeholder' => 'Jalan')); ?>
+      <label for="desa" class="text-muted col-sm-2 control-label">Kelurahan:</label>
+      <div class="col-sm-10">
+         <?php echo form_input(array('id' => 'desa', 'name' => 'desa', 'class' => 'form-control', 'placeholder' => 'Desa / Kelurahan')); ?>
+      </div>
    </div>
 
 
    <div class="form-group">
-      <?php echo form_input(array('id' => 'no_rumah', 'name' => 'no_rumah', 'class' => 'form-control', 'placeholder' => 'No Rumah')); ?>
+      <label for="kecamatan" class="text-muted col-sm-2 control-label">Kecamatan:</label>
+      <div class="col-sm-10">
+         <?php echo form_input(array('id' => 'kecamatan', 'name' => 'kecamatan', 'class' => 'form-control', 'placeholder' => 'Kecamatan')); ?>
+      </div>
    </div>
 
 
    <div class="form-group">
-      <?php echo form_input(array('id' => 'rt', 'name' => 'rt', 'class' => 'form-control', 'placeholder' => 'RT')); ?>
+      <label for="kabupaten" class="text-muted col-sm-2 control-label">Kabupaten:</label>
+      <div class="col-sm-10">
+         <?php echo form_input(array('id' => 'kabupaten', 'name' => 'kabupaten', 'class' => 'form-control', 'placeholder' => 'Kabupaten')); ?>
+      </div>
    </div>
 
 
    <div class="form-group">
-      <?php echo form_input(array('id' => 'rw', 'name' => 'rw', 'class' => 'form-control', 'placeholder' => 'RW')); ?>
+      <label for="provinsi" class="text-muted col-sm-2 control-label">Provinsi:</label>
+      <div class="col-sm-10">
+         <?php echo form_input(array('id' => 'provinsi', 'name' => 'provinsi', 'class' => 'form-control', 'placeholder' => 'Provinsi')); ?>
+      </div>
    </div>
 
 
    <div class="form-group">
-      <?php echo form_input(array('id' => 'desa', 'name' => 'desa', 'class' => 'form-control', 'placeholder' => 'Desa / Kelurahan')); ?>
+      <label for="asal_sekolah" class="text-muted col-sm-2 control-label">Asal Sekolah:</label>
+      <div class="col-sm-10">
+         <?php echo form_input(array('id' => 'asal_sekolah', 'name' => 'asal_sekolah', 'class' => 'form-control', 'placeholder' => 'Asal Sekolah')); ?>
+      </div>
    </div>
 
 
    <div class="form-group">
-      <?php echo form_input(array('id' => 'kecamatan', 'name' => 'kecamatan', 'class' => 'form-control', 'placeholder' => 'Kecamatan')); ?>
+      <label for="desa" class="text-muted col-sm-2 control-label">Jenis Sekolah:</label>
+      <div class="col-sm-10">
+         <label class="radio-inline">
+            <input type="radio" name="jenis_sekolah" id="jenis_sekolah" value="1"> SMA / MA
+         </label>
+         <label class="radio-inline">
+            <input type="radio" name="jenis_sekolah" id="jenis_sekolah" value="2"> SMK
+         </label>
+      </div>
+   </div>
+
+   <div class="form-group">
+      <label for="password" class="text-muted col-sm-2 control-label">Password:</label>
+      <div class="col-sm-10">
+         <?php echo form_password(array('id' => 'password', 'name' => 'password', 'class' => 'form-control', 'placeholder' => 'Password')); ?>
+      </div>
    </div>
 
 
    <div class="form-group">
-      <?php echo form_input(array('id' => 'kabupaten', 'name' => 'kabupaten', 'class' => 'form-control', 'placeholder' => 'Kabupaten')); ?>
+      <label for="confirm_password" class="text-muted col-sm-2 control-label">Confirm Password:</label>
+      <div class="col-sm-10">
+         <?php echo form_password(array('id' => 'confirm_password', 'name' => 'confirm_password', 'class' => 'form-control', 'placeholder' => 'Confirm Password')); ?>
+      </div>
    </div>
 
 
    <div class="form-group">
-      <?php echo form_input(array('id' => 'provinsi', 'name' => 'provinsi', 'class' => 'form-control', 'placeholder' => 'Provinsi')); ?>
+      <label for="pertanyaan" class="text-muted col-sm-2 control-label">Pertanyaan:</label>
+      <div class="col-sm-10">
+         <?php echo form_textarea(array('id' => 'pertanyaan', 'name' => 'pertanyaan', 'class' => 'form-control',
+             'placeholder' => 'Silahkan masukan pertanyaan yang hanya Anda yang mengetahui jawabannya. Hal ini agar memastikan keamanan akun', 'rows' => 2, 'style' => 'resize: none;')); ?>
+      </div>
    </div>
 
 
    <div class="form-group">
-      <?php echo form_input(array('id' => 'asal_sekolah', 'name' => 'asal_sekolah', 'class' => 'form-control', 'placeholder' => 'Asal Sekolah')); ?>
+      <label for="jawaban" class="text-muted col-sm-2 control-label">Jawaban:</label>
+      <div class="col-sm-10">
+         <?php echo form_input(array('id' => 'jawaban', 'name' => 'jawaban', 'class' => 'form-control', 'placeholder' => 'Jawaban dari pertanyaan diatas')); ?>
+      </div>
+   </div>
+
+   <div class="form-group">
+      <label for="photo" class="text-muted col-sm-2 control-label">Foto:</label>
+      <div class="col-sm-10">
+         <input type="file" name="photo" id="photo"
+                accept="image/x-png, image/gif, image/jpeg, image/jpg">
+      </div>
+   </div>
+
+   <div class="form-group">
+      <label for="photo" class="text-muted col-sm-2 control-label"></label>
+      <div class="col-sm-10">
+         <div class="checkbox">
+            <label>
+               <input type="checkbox" name="setuju"> Setuju untuk mematuhi semua peraturan yang ada
+            </label>
+         </div>
+      </div>
    </div>
 
 
    <div class="form-group">
-      <label class="radio-inline">
-         <input type="radio" name="jenis_sekolah" id="jenis_sekolah" value="1"> SMA / MA
-      </label>
-      <label class="radio-inline">
-         <input type="radio" name="jenis_sekolah" id="jenis_sekolah" value="2"> SMK
-      </label>
+      <label for="photo" class="text-muted col-sm-2 control-label"></label>
+      <div class="col-sm-10">
+         <button type="submit" class="btn btn-primary">Registrasi</button>
+      </div>
    </div>
-
-   <div class="form-group">
-      <?php echo form_password(array('id' => 'password', 'name' => 'password', 'class' => 'form-control', 'placeholder' => 'Password')); ?>
-   </div>
-
-
-   <div class="form-group">
-      <?php echo form_password(array('id' => 'confirm_password', 'name' => 'confirm_password', 'class' => 'form-control', 'placeholder' => 'Confirm Password')); ?>
-   </div>
-
-
-   <div class="form-group">
-      <?php echo form_textarea(array('id' => 'pertanyaan', 'name' => 'pertanyaan', 'class' => 'form-control',
-          'placeholder' => 'Silahkan masukan pertanyaan yang hanya Anda yang mengetahui jawabannya. Hal ini agar memastikan keamanan akun',
-          'rows' => 2, 'style' => 'resize: none;')); ?>
-   </div>
-
-
-   <div class="form-group">
-      <?php echo form_input(array('id' => 'jawaban', 'name' => 'jawaban', 'class' => 'form-control', 'placeholder' => 'Jawaban dari pertanyaan diatas')); ?>
-   </div>
-
-   <div class="form-group">
-      <input type="file" name="photo" id="photo"
-             accept="image/x-png, image/gif, image/jpeg, image/jpg">
-   </div>
-
-   <div class="checkbox">
-      <label>
-         <input type="checkbox" name="setuju"> Setuju untuk mematuhi semua peraturan yang ada
-      </label>
-   </div>
-
-   <button type="submit" class="btn btn-primary">Registrasi</button>
 
    <?php echo form_close(); ?>
 </div>
