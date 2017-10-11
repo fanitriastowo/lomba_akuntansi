@@ -44,7 +44,7 @@
 <div class="container">
 
    <h1>Your Profile</h1>
-   <a href="<?php echo site_url('akun/cetak_kwitansi'); ?>" class="btn btn-success btn-xs">Cetak Kwitansi</a>
+   <a target="_blank" href="<?php echo site_url('akun/cetak_kwitansi'); ?>" class="btn btn-success btn-xs">Cetak Kwitansi</a>
 
 </div>
 

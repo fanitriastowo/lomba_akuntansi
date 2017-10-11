@@ -97,23 +97,10 @@ class registration extends CI_Controller {
           'photo' => date('dmy') . $generated_id . $photo['file_ext']
       );
 
-      $result = '';
-      if (!$this->ion_auth->username_check($generated_id)) {
-         $result = $this->ion_auth->register($generated_id, $password, null, $additional_data, 'members');
-         $this->ion_auth->login($generated_id, $password);
-      } else {
-         $generated_id = $this->__generate_id($jenis_sekolah);
-         $result = $this->ion_auth->register($generated_id, $password, null, $additional_data, 'members');
-         $this->ion_auth->login($generated_id, $password);
-      }
+      $this->ion_auth->register($generated_id, $password, null, $additional_data);
+      $this->ion_auth->login($generated_id, $password);
+      redirect('akun');
 
-      if ($result) {
-         $this->session->set_flashdata('succes_registration', 'Registrasi Berhasil');
-         redirect('akun/cetak_kwitansi');
-      } else {
-         $this->session->set_flashdata('error_registration', $this->ion_auth->errors());
-         redirect('registration');
-      }
    }
 
    /**
