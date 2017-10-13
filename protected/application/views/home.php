@@ -109,12 +109,13 @@
                                     <!-- Clock Countdown -->
                                     <!-- <div id="clock-countdown" class="animated bounceInDown"-->
                                     <!--      data-animation-delay="700"></div>-->
-                                    <a class="btn btn-default" href="<?php echo site_url('registration')?>">Register Now</a>
+                                    <a class="btn btn-default" href="<?php echo site_url('registration') ?>">Register
+                                       Now</a>
 
                                     <hr>
 
                                     <p>Sudah registrasi?</p>
-                                    <a class="btn btn-default" href="<?php echo site_url('login')?>">Login</a>
+                                    <a class="btn btn-default" href="<?php echo site_url('login') ?>">Login</a>
 
 
                                     <!-- copyright -->
@@ -129,9 +130,23 @@
                               </div>
                            </div><!-- /row -->
                         </div><!-- /container -->
-                     </div>
-                     <!-- /home section -->
 
+                        <!-- container -->
+                        <div class="container">
+                           <div class="row">
+                              <div class="col-md-4">
+                                 <p>Upcoming Events</p>
+                              </div>
+                              <div class="col-md-4">
+                                 <p>Pamflet</p>
+                                 <img class="img-responsive img-thumbnail" src="<?php echo site_url("assets/images/contents/pamflet.jpg"); ?>">
+                              </div>
+                              <div class="col-md-4">
+                                 <p>Alur Registrasi</p>
+                              </div>
+                           </div><!-- /row -->
+                        </div><!-- /container -->
+                     </div>
                   </div><!-- /bt-carousel -->
                </div>
             </div>
