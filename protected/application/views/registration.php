@@ -7,8 +7,8 @@
 <body>
 <div class="container">
 
-   <h1 class="text-center">Registrasi</h1>
-   <p class="text-center">*Silahkan isi form registrasi dibawah ini untuk mendaftar</p>
+   <h1 class="text-center">Form Registrasi</h1>
+   <p class="text-center">*) Wajib Diisi</p>
 
    <!-- Error import Notification -->
    <?php if (!empty($this->session->flashdata('error_registration'))): ?>
@@ -23,7 +23,7 @@
    <?php echo form_open_multipart('registration/registrasi', 'id="form-registration" class="form-horizontal"'); ?>
 
    <div class="form-group">
-      <label for="nama" class="text-muted col-sm-2 control-label">Nama:</label>
+      <label for="nama" class="text-muted col-sm-2 control-label">Nama *:</label>
       <div class="col-sm-10">
          <?php echo form_input(array('id' => 'nama', 'name' => 'nama', 'class' => 'form-control', 'placeholder' => 'Nama Lengkap')); ?>
       </div>
@@ -41,7 +41,7 @@
 
 
    <div class="form-group">
-      <label for="tempat_lahir" class="text-muted col-sm-2 control-label">Tempat Lahir:</label>
+      <label for="tempat_lahir" class="text-muted col-sm-2 control-label">Tempat Lahir *:</label>
       <div class="col-sm-10">
          <?php echo form_input(array('id' => 'tempat_lahir', 'name' => 'tempat_lahir', 'class' => 'form-control', 'placeholder' => 'Tempat Lahir')); ?>
       </div>
@@ -156,7 +156,7 @@
    </div>
 
    <div class="form-group">
-      <label for="no_handphone" class="text-muted col-sm-2 control-label">No Handphone:</label>
+      <label for="no_handphone" class="text-muted col-sm-2 control-label">No Handphone *:</label>
       <div class="col-sm-10">
          <?php echo form_input(array('id' => 'no_handphone', 'name' => 'no_handphone', 'class' => 'form-control', 'placeholder' =>
              'No Handphone')); ?>
@@ -164,9 +164,9 @@
    </div>
 
    <div class="form-group">
-      <label for="jalan" class="text-muted col-sm-2 control-label">Jalan:</label>
+      <label for="jalan" class="text-muted col-sm-2 control-label">Alamat:</label>
       <div class="col-sm-10">
-         <?php echo form_input(array('id' => 'jalan', 'name' => 'jalan', 'class' => 'form-control', 'placeholder' => 'Jalan')); ?>
+         <?php echo form_input(array('id' => 'jalan', 'name' => 'jalan', 'class' => 'form-control', 'placeholder' => 'Alamat')); ?>
       </div>
    </div>
 
@@ -227,7 +227,7 @@
 
 
    <div class="form-group">
-      <label for="asal_sekolah" class="text-muted col-sm-2 control-label">Asal Sekolah:</label>
+      <label for="asal_sekolah" class="text-muted col-sm-2 control-label">Asal Sekolah *:</label>
       <div class="col-sm-10">
          <?php echo form_input(array('id' => 'asal_sekolah', 'name' => 'asal_sekolah', 'class' => 'form-control', 'placeholder' => 'Asal Sekolah')); ?>
       </div>
@@ -247,7 +247,7 @@
    </div>
 
    <div class="form-group">
-      <label for="password" class="text-muted col-sm-2 control-label">Password:</label>
+      <label for="password" class="text-muted col-sm-2 control-label">Password *:</label>
       <div class="col-sm-10">
          <?php echo form_password(array('id' => 'password', 'name' => 'password', 'class' => 'form-control', 'placeholder' => 'Password')); ?>
       </div>
@@ -255,7 +255,7 @@
 
 
    <div class="form-group">
-      <label for="confirm_password" class="text-muted col-sm-2 control-label">Confirm Password:</label>
+      <label for="confirm_password" class="text-muted col-sm-2 control-label">Confirm Password *:</label>
       <div class="col-sm-10">
          <?php echo form_password(array('id' => 'confirm_password', 'name' => 'confirm_password', 'class' => 'form-control', 'placeholder' => 'Confirm Password')); ?>
       </div>
@@ -263,7 +263,7 @@
 
 
    <div class="form-group">
-      <label for="pertanyaan" class="text-muted col-sm-2 control-label">Pertanyaan:</label>
+      <label for="pertanyaan" class="text-muted col-sm-2 control-label">Pertanyaan *:</label>
       <div class="col-sm-10">
          <?php echo form_textarea(array('id' => 'pertanyaan', 'name' => 'pertanyaan', 'class' => 'form-control',
              'placeholder' => 'Silahkan masukan pertanyaan yang hanya Anda yang mengetahui jawabannya. Hal ini agar memastikan keamanan akun', 'rows' => 2, 'style' => 'resize: none;')); ?>
@@ -272,7 +272,7 @@
 
 
    <div class="form-group">
-      <label for="jawaban" class="text-muted col-sm-2 control-label">Jawaban:</label>
+      <label for="jawaban" class="text-muted col-sm-2 control-label">Jawaban *:</label>
       <div class="col-sm-10">
          <?php echo form_input(array('id' => 'jawaban', 'name' => 'jawaban', 'class' => 'form-control', 'placeholder' => 'Jawaban dari pertanyaan diatas')); ?>
       </div>
@@ -287,7 +287,7 @@
    </div>
 
    <div class="form-group">
-      <label for="photo" class="text-muted col-sm-2 control-label"></label>
+      <label for="setuju" class="text-muted col-sm-2 control-label"></label>
       <div class="col-sm-10">
          <div class="checkbox">
             <label>
@@ -299,7 +299,7 @@
 
 
    <div class="form-group">
-      <label for="photo" class="text-muted col-sm-2 control-label"></label>
+      <label class="text-muted col-sm-2 control-label"></label>
       <div class="col-sm-10">
          <button type="submit" class="btn btn-primary">Registrasi</button>
       </div>
@@ -350,6 +350,9 @@
             jawaban: {
                required: true,
                minlength: 3
+            },
+            setuju: {
+               required: true
             }
          },
          messages: {
@@ -387,11 +390,14 @@
             jawaban: {
                required: "Jawaban harus diisi",
                minlength: "minimal 3 karakter"
+            },
+            setuju: {
+               required: "Wajib dicentang"
             }
          },
          errorPlacement: function (error, element) {
-            var spot = $(element).closest('.form-group');
-            error.insertBefore(spot);
+            let spot = $(element).closest('.form-control');
+            error.insertAfter(spot);
          },
          highlight: function (element) {
             $(element).closest('.form-group').addClass('has-error');
