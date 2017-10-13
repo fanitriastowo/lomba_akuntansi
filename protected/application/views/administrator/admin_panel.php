@@ -9,15 +9,25 @@
    <div class="container">
       <div class="panel panel-default">
          <div class="panel-body">
-         <h1 class="text-center">Admin Panel</h1>
-         <p class="text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-         </p>
+         <h1 class="text-center">Daftar Peserta</h1>
+         <table class="table table-condensed table-bordered table-stripes table-hovered">
+            <tr>
+               <th>No</th>
+               <th>Nama</th>
+               <th>J_K</th>
+               <th>Asal Sekolah</th>
+               <th>No Telp</th>
+               <th>Action</th>
+            </tr>
+            <tr>
+               <td>No</td>
+               <td>Nama</td>
+               <td>J_K</td>
+               <td>Asal Sekolah</td>
+               <td>No Telp</td>
+               <td>Action</td>
+            </tr>
+         </table>
          </div>
          <div class="panel-footer">
          <a class="btn btn-primary btn-md btn-block" href="<?php echo site_url('administrator/logout'); ?>">Logout</a>
