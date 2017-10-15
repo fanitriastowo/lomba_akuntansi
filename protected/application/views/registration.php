@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
    <?php $this->load->view('template/css'); ?>
-   <title>Document</title>
+   <title>Registrasi :: Lomba Akuntansi UMP 2017</title>
 </head>
 <body>
 <div class="container">
@@ -172,21 +172,21 @@
 
    <div class="form-group">
       <label class="col-sm-2 control-label text-muted" for="no_rumah">No Rumah</label>
-      <div class="col-sm-2">
+      <div class="col-sm-1">
          <div class="form-inline">
             <?php echo form_input(array('id' => 'no_rumah', 'name' => 'no_rumah', 'class' => 'form-control', 'placeholder' => 'No Rumah')); ?>
          </div>
       </div>
 
       <label class="col-sm-2 control-label text-muted" for="rt">RT</label>
-      <div class="col-sm-2">
+      <div class="col-sm-1">
          <div class="form-inline">
             <?php echo form_input(array('id' => 'rt', 'name' => 'rt', 'class' => 'form-control', 'placeholder' => 'RT')); ?>
          </div>
       </div>
 
       <label class="col-sm-2 control-label text-muted" for="rw">RW</label>
-      <div class="col-sm-2">
+      <div class="col-sm-1">
          <div class="form-inline">
             <?php echo form_input(array('id' => 'rw', 'name' => 'rw', 'class' => 'form-control', 'placeholder' => 'RW')); ?>
          </div>

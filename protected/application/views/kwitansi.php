@@ -104,7 +104,7 @@
       dengan cara login menggunakan akun masing masing</span>
 
    <hr>
-   <span>atau menghubungi Sandi : 08-222-1834-636</span>
+   <span>atau menghubungi Arifin : 0858-6993-0105</span>
 
 </div>
 <?php $this->load->view('template/js'); ?>

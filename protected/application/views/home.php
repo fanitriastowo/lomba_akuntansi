@@ -109,8 +109,7 @@
                                     <!-- Clock Countdown -->
                                     <!-- <div id="clock-countdown" class="animated bounceInDown"-->
                                     <!--      data-animation-delay="700"></div>-->
-                                    <a class="btn btn-default" href="<?php echo site_url('registration') ?>">Register
-                                       Now</a>
+                                    <a class="btn btn-default" href="<?php echo site_url('registration') ?>">Registrasi</a>
 
                                     <hr>
 
@@ -135,7 +134,11 @@
                         <div class="container">
                            <div class="row">
                               <div class="col-md-4">
-                                 <p>Upcoming Events</p>
+                                 <p>Tanggal Penting</p>
+                                 <ol>
+                                    <li>Pendaftaran : 9 Oktober - 4 November 2017</li>
+                                    <li>Pelakasanaan CBT : 10 - 11 November 2017</li>
+                                 </ol>
                               </div>
                               <div class="col-md-4">
                                  <p>Pamflet</p>
@@ -143,6 +146,7 @@
                               </div>
                               <div class="col-md-4">
                                  <p>Alur Registrasi</p>
+                                 <img class="img-responsive img-thumbnail" src="<?php echo site_url("assets/images/contents/alur.png"); ?>">
                               </div>
                            </div><!-- /row -->
                         </div><!-- /container -->
