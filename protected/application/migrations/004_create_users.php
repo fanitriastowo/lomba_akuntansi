@@ -58,6 +58,7 @@ class Migration_create_users extends CI_Migration {
                 `sudah_transfer` CHAR(1) NOT NULL DEFAULT '0',
                 `belum_ujian` CHAR(1) NOT NULL DEFAULT '0',
                 `sudah_ujian` CHAR(1) NOT NULL DEFAULT '0',
+                `jenis_kelamin` CHAR(1) NOT NULL DEFAULT 'L',
                 PRIMARY KEY (`id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
         ";
@@ -96,11 +97,11 @@ class Migration_create_users extends CI_Migration {
         ";
 
       $insert_users = "
-            INSERT INTO `akuntansi_users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `created_on`, `last_login`, `active`, `nama`, `company`, `phone`, `tempat_lahir`,  `jalan`, `no_rumah`, `rt`, `rw`, `desa`, `kecamatan`, `kabupaten`, `provinsi`, `asal_sekolah`, `jenis_sekolah`, `pertanyaan`, `jawaban`) VALUES
+            INSERT INTO `akuntansi_users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `created_on`, `last_login`, `active`, `nama`, `company`, `phone`, `tempat_lahir`,  `jalan`, `no_rumah`, `rt`, `rw`, `desa`, `kecamatan`, `kabupaten`, `provinsi`, `asal_sekolah`, `jenis_sekolah`, `pertanyaan`, `jawaban`, `jenis_kelamin`) VALUES
                 (
                 '1',0x7f000001,'administrator','59beecdf7fc966e2f17fd8f65a4a9aeb09d4a3d4','9462e8eee0','admin@admin.com','',NULL,'1268889823',
                 '1268889823','1', 'Admin', 'ADMIN','0', 'BANYUMAS', 'jln. Tambangan', '39', '02', '01', 'Patikraja', 'Patikraja', 'Banyumas',
-                'Jawa Tengah', 'SMK Negeri 2 Purwokerto', 'SMK', 'Siapa nama drummer favorite?', 'Danny Carey'
+                'Jawa Tengah', 'SMK Negeri 2 Purwokerto', 'SMK', 'Siapa nama drummer favorite?', 'Danny Carey', 'L'
                 );
         ";
 

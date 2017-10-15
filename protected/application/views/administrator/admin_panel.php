@@ -19,14 +19,18 @@
                <th>No Telp</th>
                <th>Action</th>
             </tr>
+            <?php $no = 1; ?>
+            <?php foreach ($users as $user) : ?>
             <tr>
-               <td>No</td>
-               <td>Nama</td>
-               <td>J_K</td>
-               <td>Asal Sekolah</td>
-               <td>No Telp</td>
+               <td><?php echo $no; ?></td>
+               <td><?php echo $user->nama; ?></td>
+               <td><?php echo $user->jenis_kelamin; ?></td>
+               <td><?php echo $user->asal_sekolah; ?></td>
+               <td><?php echo $user->phone; ?></td>
                <td>Action</td>
             </tr>
+            <?php $no++; ?>
+            <?php endforeach; ?>
          </table>
          </div>
          <div class="panel-footer">

@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class administrator extends CI_Controller {
 
@@ -7,18 +7,18 @@ class administrator extends CI_Controller {
    }
 
    /**
-   * Login page admin panel
-   */
+    * Login page admin panel
+    */
    public function index() {
       if ($this->ion_auth->is_admin()) {
          redirect('administrator/admin_panel');
-      } 
+      }
       $this->load->view('administrator/admin_login');
    }
 
    /**
-   * post login admin
-   */
+    * post login admin
+    */
    public function login_post() {
       // ambil value dari form login
       $username = $this->input->post('username');
@@ -33,42 +33,27 @@ class administrator extends CI_Controller {
             $this->session->set_flashdata('not_admin', TRUE);
             redirect('administrator');
          }
-      } 
-      
+      }
+
       // jika invalid
       $this->session->set_flashdata('invalid', TRUE);
       redirect('administrator');
    }
 
    /**
-   * Admin Panel
-   */
+    * Admin Panel
+    */
    public function admin_panel() {
-      $this->load->view('administrator/admin_panel');
+      $model['users'] = $this->ion_auth->users(2)->result();
+      $this->load->view('administrator/admin_panel', $model);
    }
 
    /**
-   * Admin Logout
-   */
+    * Admin Logout
+    */
    public function logout() {
       $this->ion_auth->logout();
       redirect('administrator');
-   }
-
-   /**
-   * Create dummy user
-   */
-   public function register($username) {
-      $username = $username;
-      $password = 'CALON123456789';
-      $email = 'calon@calon.com';
-      $additional_data = array(
-         'first_name' => 'Calon',
-         'last_name' => 'Mahasiswa',
-      );
-      $group_ids = array('2');
-      $this->ion_auth->register($username, $password, $email, $additional_data, $group_ids);
-      redirect('administrator/admin_panel');
    }
 }
 

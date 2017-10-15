@@ -65,4 +65,7 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
+# ignore uploaded file
+public/uploads/users
+
 # End of https://www.gitignore.io/api/phpstorm
