@@ -43,6 +43,7 @@ class registration extends CI_Controller {
       $password = $this->input->post('password');
       $pertanyaan = $this->input->post('pertanyaan');
       $jawaban = $this->input->post('jawaban');
+      $tanggal_daftar = date('Y-m-d');
 
       // generate ID
       $generated_id = $this->__generate_id($jenis_sekolah);
@@ -94,6 +95,7 @@ class registration extends CI_Controller {
           'jenis_sekolah' => $jenis_sekolah,
           'pertanyaan' => $pertanyaan,
           'jawaban' => $jawaban,
+          'tanggal_daftar' => $tanggal_daftar,
           'photo' => date('dmy') . $generated_id . $photo['file_ext']
       );
 
