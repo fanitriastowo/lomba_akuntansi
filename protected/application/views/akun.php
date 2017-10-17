@@ -56,6 +56,11 @@
                           class="img-circle avatar avatar-original"
                           style="-webkit-user-select:none; display:block; margin:auto;"
                           src="<?php echo site_url("uploads/users/" . $model->photo); ?>">
+                     <br>
+                     <img width="120"
+                          class="img-circle avatar avatar-original"
+                          style="-webkit-user-select:none; display:block; margin:auto;"
+                          src="<?php echo site_url("uploads/bukti_transfer/" . $model->bukti_transfer); ?>">
                   </div>
                   <div class="col-md-8">
                      <div class="row">
@@ -87,9 +92,20 @@
                            <br>
 
                            <small class="text-muted">Tanggal Registrasi:
-                              <?php echo date('j F Y', strtotime($model->tanggal_daftar)); ?></small><br>
+                              <?php echo date('j F Y', strtotime($model->tanggal_daftar)); ?></small>
+                           <br>
 
-                           <small class="text-muted label label-danger">* Anda belum mengupload bukti transfer</small>
+                           <?php // cek jika members sudah upload bukti transfer
+                           switch ($model->sudah_transfer) {
+                              case 0 :
+                                 echo '<small class="text-muted label label-danger">* Anda belum mengupload bukti transfer</small>';
+                                 break;
+                              case 1 :
+                                 echo '<small class="text-muted label label-success">* Anda sudah mengupload bukti transfer</small>';
+                                 break;
+                           }
+                           ?>
+
                         </div>
                      </div>
                   </div>
