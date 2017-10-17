@@ -108,8 +108,7 @@ class Migration_create_users extends CI_Migration {
 
       $insert_users_groups = "
         INSERT INTO `akuntansi_users_groups` (`id`, `user_id`, `group_id`) VALUES
-            (1,1,1),
-            (2,1,2);
+            (1,1,1);
         ";
 
       ///////////////////////////////////////////////////////

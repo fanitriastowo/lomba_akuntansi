@@ -18,7 +18,7 @@
                <th>J_K</th>
                <th>Asal Sekolah</th>
                <th>No Telp</th>
-               <th>Action</th>
+               <th width="14%">Action</th>
             </tr>
             <?php $no = 1; ?>
             <?php foreach ($users as $user) : ?>
@@ -29,7 +29,12 @@
                <td><?php echo $user->jenis_kelamin; ?></td>
                <td><?php echo $user->asal_sekolah; ?></td>
                <td><?php echo $user->phone; ?></td>
-               <td>Action</td>
+               <td>
+                  <a href="#" class="btn btn-xs btn-success">det</a>
+                  <a href="#" class="btn btn-xs btn-primary">kon</a>
+                  <a href="#" class="btn btn-xs btn-default">set</a>
+                  <a href="#" class="btn btn-xs btn-danger">cet</a>
+               </td>
             </tr>
             <?php $no++; ?>
             <?php endforeach; ?>

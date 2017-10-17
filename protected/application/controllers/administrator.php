@@ -53,7 +53,7 @@ class administrator extends CI_Controller {
     */
    public function logout() {
       $this->ion_auth->logout();
-      redirect('administrator');
+      redirect('home');
    }
 }
 
