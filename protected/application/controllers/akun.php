@@ -13,16 +13,16 @@ class akun extends CI_Controller {
    }
 
    public function index() {
-     if ($this->ion_auth->logged_in()) {
-        $this->load->view("akun");
-     } else {
-        redirect('login');
-     }
+      if ($this->ion_auth->logged_in()) {
+         $model['model'] = $this->ion_auth->user()->row();
+         $this->load->view("akun", $model);
+      } else {
+         redirect('login');
+      }
    }
 
    public function cetak_kwitansi() {
-      $prinsipal = $this->ion_auth->user()->row();
-      $model['model'] = $prinsipal;
+      $model['model'] = $this->ion_auth->user()->row();
       $this->load->view('kwitansi', $model);
    }
 }

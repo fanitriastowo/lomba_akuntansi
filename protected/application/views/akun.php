@@ -8,7 +8,6 @@
 </head>
 <body>
 
-
 <!-- Static navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
    <div class="container-fluid">
@@ -31,7 +30,7 @@
                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Preferensi <span class="caret"></span></a>
                <ul class="dropdown-menu">
-                  <li><a href="#">Akun</a></li>
+                  <li><a href="#">Pengaturan</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="<?php echo site_url('login/logout'); ?>">Logout</a></li>
                </ul>
@@ -42,10 +41,60 @@
 </nav>
 
 <div class="container">
-
-   <h1>Your Profile</h1>
-   <a target="_blank" href="<?php echo site_url('akun/cetak_kwitansi'); ?>" class="btn btn-success btn-xs">Cetak Kwitansi</a>
-
+   <div class="row">
+      <div class="col-md-12">
+         <div class="panel panel-default">
+            <div class="panel-body">
+               <div class="row">
+                  <div class="col-md-12 lead">User profile
+                     <hr>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-4 text-center">
+                     <img class="img-circle avatar avatar-original"
+                          style="-webkit-user-select:none; display:block; margin:auto;"
+                          src="http://robohash.org/sitsequiquia.png?size=120x120">
+                  </div>
+                  <div class="col-md-8">
+                     <div class="row">
+                        <div class="col-md-12">
+                           <h1 class="only-bottom-margin"><?php echo $model->nama; ?></h1>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-8">
+                           <span class="text-muted">Telepon:</span>
+                           <?php echo $model->phone; ?><br>
+                           <span class="text-muted">Tempat Tanggal Lahir:</span>
+                           <?php echo $model->tempat_lahir; ?>
+                           , <?php echo $model->tanggal_lahir; ?><br>
+                           <span class="text-muted">Jenis Kelamin:</span>
+                           <?php echo $model->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan'; ?>
+                           <br><br>
+                           <small class="text-muted">Tanggal Registrasi:
+                              <?php echo $model->tanggal_daftar; ?></small>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-12">
+                     <hr>
+                     <button class="btn btn-default pull-right">
+                        <i class="glyphicon glyphicon-pencil"></i> Edit
+                     </button>
+                     <a class="btn btn-default pull-right"
+                        target="_blank"
+                        href="<?php echo site_url('akun/cetak_kwitansi'); ?>">
+                        <i class="glyphicon glyphicon-print"></i> Kwitansi
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
 
 <?php $this->load->view('template/js'); ?>
