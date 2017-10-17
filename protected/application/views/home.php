@@ -109,26 +109,18 @@
                                     <!-- Clock Countdown -->
                                     <!-- <div id="clock-countdown" class="animated bounceInDown"-->
                                     <!--      data-animation-delay="700"></div>-->
-                                    <a class="btn btn-default" href="<?php echo site_url('registration') ?>">Registrasi</a>
+                                    <a class="btn btn-default btn-lg"
+                                       href="<?php echo site_url('registration') ?>">Registrasi</a>
 
-                                    <hr>
-
-                                    <p>Sudah registrasi?</p>
-                                    <a class="btn btn-default" href="<?php echo site_url('login') ?>">Login</a>
-
-
-                                    <!-- copyright -->
-                                    <footer class="copy-right animated bounceInUp" data-animation-delay="700">
-                                       <div class="copyright">
-                                          © 2017 <a target="_blank" href="ekonomi.ump.ac.id">Fakultas Ekonomi &
-                                             Bisnis</a> - All Rights Reserved
-                                       </div>
-                                    </footer><!-- /copyright -->
+                                    <label>atau</label>
+                                    <a class="btn btn-default btn-lg" href="<?php echo site_url('login') ?>">Login</a>
 
                                  </div><!-- /content slide -->
                               </div>
                            </div><!-- /row -->
                         </div><!-- /container -->
+
+                        <hr>
 
                         <!-- container -->
                         <div class="container">
@@ -142,13 +134,28 @@
                               </div>
                               <div class="col-md-4">
                                  <p>Pamflet</p>
-                                 <img class="img-responsive img-thumbnail" src="<?php echo site_url("assets/images/contents/pamflet.jpg"); ?>">
+                                 <img class="img-responsive img-thumbnail"
+                                      src="<?php echo site_url("assets/images/contents/pamflet.jpg"); ?>">
                               </div>
                               <div class="col-md-4">
                                  <p>Alur Registrasi</p>
-                                 <img class="img-responsive img-thumbnail" src="<?php echo site_url("assets/images/contents/alur.png"); ?>">
+                                 <img class="img-responsive img-thumbnail"
+                                      src="<?php echo site_url("assets/images/contents/alur.png"); ?>">
                               </div>
+
                            </div><!-- /row -->
+
+                           <div class="row">
+
+                              <!-- copyright -->
+                              <footer class="copy-right animated bounceInUp" data-animation-delay="700">
+                                 <div class="copyright">
+                                    © 2017 <a target="_blank" href="ekonomi.ump.ac.id">Fakultas Ekonomi &
+                                       Bisnis</a> - All Rights Reserved
+                                 </div>
+                              </footer><!-- /copyright -->
+
+                           </div>
                         </div><!-- /container -->
                      </div>
                   </div><!-- /bt-carousel -->
