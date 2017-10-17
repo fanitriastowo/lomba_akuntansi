@@ -12,7 +12,8 @@
          <h1 class="text-center">Daftar Peserta</h1>
          <table class="table table-condensed table-bordered table-stripes table-hovered">
             <tr>
-               <th>No</th>
+               <th width="4%">No</th>
+               <th>ID</th>
                <th>Nama</th>
                <th>J_K</th>
                <th>Asal Sekolah</th>
@@ -23,6 +24,7 @@
             <?php foreach ($users as $user) : ?>
             <tr>
                <td><?php echo $no; ?></td>
+               <td><?php echo $user->username; ?></td>
                <td><?php echo $user->nama; ?></td>
                <td><?php echo $user->jenis_kelamin; ?></td>
                <td><?php echo $user->asal_sekolah; ?></td>
