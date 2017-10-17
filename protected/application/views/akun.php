@@ -52,9 +52,10 @@
                </div>
                <div class="row">
                   <div class="col-md-4 text-center">
-                     <img class="img-circle avatar avatar-original"
+                     <img width="120"
+                          class="img-circle avatar avatar-original"
                           style="-webkit-user-select:none; display:block; margin:auto;"
-                          src="http://robohash.org/sitsequiquia.png?size=120x120">
+                          src="<?php echo site_url("uploads/users/" . $model->photo); ?>">
                   </div>
                   <div class="col-md-8">
                      <div class="row">
@@ -66,14 +67,29 @@
                         <div class="col-md-8">
                            <span class="text-muted">Telepon:</span>
                            <?php echo $model->phone; ?><br>
+
                            <span class="text-muted">Tempat Tanggal Lahir:</span>
-                           <?php echo $model->tempat_lahir; ?>
-                           , <?php echo $model->tanggal_lahir; ?><br>
+                           <?php echo $model->tempat_lahir; ?>,
+                           <?php echo date('j F Y', strtotime($model->tanggal_lahir)); ?><br>
+
                            <span class="text-muted">Jenis Kelamin:</span>
-                           <?php echo $model->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan'; ?>
-                           <br><br>
+                           <?php echo $model->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan'; ?><br>
+
+                           <span class="text-muted">Asal Sekolah:</span>
+                           <?php echo $model->asal_sekolah; ?><br>
+
+                           <span class="text-muted">Pertanyaan Anda:</span><br>
+                           <?php echo $model->pertanyaan; ?><br>
+
+                           <span class="text-muted">Jawaban:</span>
+                           <strong><?php echo $model->jawaban; ?></strong><br>
+
+                           <br>
+
                            <small class="text-muted">Tanggal Registrasi:
-                              <?php echo $model->tanggal_daftar; ?></small>
+                              <?php echo date('j F Y', strtotime($model->tanggal_daftar)); ?></small><br>
+
+                           <small class="text-muted label label-danger">* Anda belum mengupload bukti transfer</small>
                         </div>
                      </div>
                   </div>
@@ -81,9 +97,14 @@
                <div class="row">
                   <div class="col-md-12">
                      <hr>
-                     <button class="btn btn-default pull-right">
+                     <a href="#"
+                        class="btn btn-default pull-right">
+                        <i class="glyphicon glyphicon-paperclip"></i> Upload Transfer
+                     </a>
+                     <a href="#"
+                        class="btn btn-default pull-right">
                         <i class="glyphicon glyphicon-pencil"></i> Edit
-                     </button>
+                     </a>
                      <a class="btn btn-default pull-right"
                         target="_blank"
                         href="<?php echo site_url('akun/cetak_kwitansi'); ?>">
