@@ -29,16 +29,6 @@
 
 <div class="container">
 
-   <!-- Error import Notification -->
-   <?php if (!empty($this->session->flashdata('succes_registration'))): ?>
-      <div class="alert alert-success" role="alert">
-         <button type="button" class="close" data-dismiss="alert">
-            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-         </button>
-         <?php echo $this->session->flashdata('succes_registration'); ?>
-      </div>
-   <?php endif ?>
-
    <table>
       <tr>
          <td width="20%"><img width="70%" src="<?php echo site_url('assets/images/logo.gif') ?>"></td>
@@ -91,7 +81,7 @@
 
    <span>silahkan transfer biaya pendaftaran sebesar <strong>Rp. 50.000,-</strong> ke rekening berikut:</span>
    <br><br>
-   <code>
+   <code id="pdf">
       BRI KK UMP Purwokerto
       a.n. Nur Isna Inayati :
       1792-01-001116-53-1

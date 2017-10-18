@@ -32,8 +32,8 @@
             <?php endif ?>
 
             <!-- LOGO -->
-            <a href="https://ump.ac.id/" title="Universitas Muhammadiyah Purwokerto" target="_blank">
-               <img class="center-block" src="<?php echo site_url('assets/images/logo.png') ?>" alt="Logo">
+            <a href="<?php echo site_url(); ?>" title="Universitas Muhammadiyah Purwokerto">
+               <img class="center-block" src="<?php echo site_url('assets/ump.png') ?>" alt="Logo">
             </a>
 
             <!-- LOGIN BOX -->
