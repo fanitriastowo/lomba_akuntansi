@@ -94,7 +94,7 @@
    <code>
       BRI KK UMP Purwokerto
       a.n. Nur Isna Inayati :
-      1792-01-0001116-53-1
+      1792-01-001116-53-1
    </code>
 
    <hr>
