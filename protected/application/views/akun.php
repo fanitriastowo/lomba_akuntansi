@@ -113,10 +113,10 @@
                <div class="row">
                   <div class="col-md-12">
                      <hr>
-                     <a href="#"
-                        class="btn btn-default pull-right">
+                     <button type="button" data-toggle="modal" data-target="#myModal"
+                             class="btn btn-default pull-right">
                         <i class="glyphicon glyphicon-paperclip"></i> Upload Transfer
-                     </a>
+                     </button>
                      <a href="#"
                         class="btn btn-default pull-right">
                         <i class="glyphicon glyphicon-pencil"></i> Edit
@@ -133,6 +133,35 @@
       </div>
    </div>
 </div>
+
+<!-- Modal -->
+<?php echo form_open_multipart('akun/upload_kwitansi', 'class="form-horizontal"'); ?>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                       aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+         </div>
+         <div class="modal-body">
+
+            <div class="form-group">
+               <label for="add_filename" class="col-sm-2 control-label">Upload:</label>
+               <div class="col-sm-10">
+                  <input type="file" name="bukti_transfer" id="bukti_transfer"
+                         accept="image/x-png, image/gif, image/jpeg, image/jpg">
+               </div>
+            </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Upload</button>
+         </div>
+      </div>
+   </div>
+</div>
+<?php echo form_close(); ?>
 
 <?php $this->load->view('template/js'); ?>
 </body>
