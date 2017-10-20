@@ -22,6 +22,7 @@ class Akun extends CI_Controller {
    }
 
    public function cetak_kwitansi() {
+      $this->load->helper('tcpdf_helper');
       $model['model'] = $this->ion_auth->user()->row();
       $this->load->view('kwitansi', $model);
    }
