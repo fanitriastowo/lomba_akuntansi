@@ -47,6 +47,7 @@ class registration extends CI_Controller {
 
       // generate ID
       $generated_id = $this->__generate_id($jenis_sekolah);
+      $photo_filename = '';
 
       // photo field
       // Set filename
@@ -57,8 +58,8 @@ class registration extends CI_Controller {
       $config['max_height'] = '4098';
       $config['max_width'] = '4098';
       $this->load->library('upload', $config);
-      $photo = NULL;
 
+      // if user upload their photo, so set photo filename
       if ($this->upload->do_upload('photo')) {
 
          $photo = $this->upload->data();
@@ -74,8 +75,10 @@ class registration extends CI_Controller {
             $this->load->library('image_lib', $configResize);
             $this->image_lib->resize();
          }
+         $photo_filename = date('dmy') . $generated_id . $photo['file_ext'];
+      } else {
+         $photo_filename = 'blank.jpg';
       }
-
 
       $additional_data = array(
           'nama' => $nama,
@@ -96,8 +99,9 @@ class registration extends CI_Controller {
           'pertanyaan' => $pertanyaan,
           'jawaban' => $jawaban,
           'tanggal_daftar' => $tanggal_daftar,
-          'photo' => date('dmy') . $generated_id . $photo['file_ext']
+          'photo' => $photo_filename
       );
+
 
       $this->ion_auth->register($generated_id, $password, null, $additional_data);
       $this->ion_auth->login($generated_id, $password);
