@@ -10,7 +10,7 @@
    <div class="panel panel-default">
       <div class="panel-body">
          <h1 class="text-center">Daftar Peserta</h1>
-         <table class="table table-condensed table-bordered table-stripes table-hovered">
+         <table class="table table-condensed table-bordered table-striped table-hover">
             <tr>
                <th width="4%">No</th>
                <th>Registrasi</th>
@@ -22,8 +22,21 @@
                <th width="10%">Action</th>
             </tr>
             <?php $no = 1; ?>
+            <?php $status = ""; ?>
             <?php foreach ($users as $user) : ?>
-               <tr>
+
+               <?php
+               switch ($user->sudah_transfer) {
+                  case 0 :
+                     $status = "warning";
+                     break;
+                  case 1 :
+                     $status = "success";
+                     break;
+               }
+               ?>
+
+               <tr class="<?php echo $status; ?>">
                   <td><?php echo $no; ?></td>
                   <td><?php echo $user->tanggal_daftar; ?></td>
                   <td><?php echo $user->username; ?></td>
@@ -36,13 +49,18 @@
                         class="btn btn-xs btn-success konfirm_ujian" title="Konfirmasi Ujian">
                         <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a>
 
-                     <a href="#" class="btn btn-xs btn-primary" title="Detail Peserta">
+                     <a href="#" class="btn btn-xs btn-primary disabled" title="Detail Peserta" disabled="true">
                         <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>
                   </td>
                </tr>
                <?php $no++; ?>
             <?php endforeach; ?>
          </table>
+         <strong>Ket:</strong> <br>
+         <code>
+            Sudah Transfer <label class="label label-success">status</label>
+            Belum Transfer <label class="label label-warning">status</label>
+         </code>
       </div>
       <div class="panel-footer">
          <a class="btn btn-primary btn-md btn-block" href="<?php echo site_url('administrator/logout'); ?>">Logout</a>
