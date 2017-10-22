@@ -32,8 +32,10 @@
                   <td><?php echo $user->asal_sekolah; ?></td>
                   <td><?php echo $user->phone; ?></td>
                   <td>
-                     <a href="#" class="btn btn-xs btn-success" title="Konfirmasi Ujian">
+                     <a href="<?php echo site_url("administrator/get_user_transfer_image/" . $user->id); ?>"
+                        class="btn btn-xs btn-success konfirm_ujian" title="Konfirmasi Ujian">
                         <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a>
+
                      <a href="#" class="btn btn-xs btn-primary" title="Detail Peserta">
                         <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>
                   </td>
@@ -49,6 +51,54 @@
    </div>
 </div>
 
+
+<!-- ==================================MODAL WINDOW==================================== -->
+<!-- Modal Import -->
+<?php echo form_open('administrator/approve_test', array('class' => 'form-horizontal')); ?>
+<?php echo form_hidden('user_id', '') ?>
+<div class="modal fade" id="modal_approval" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Bukti Transfer</h4>
+         </div>
+         <div class="modal-body text-center">
+            <img src="" id="image_name" class="img-thumbnail" width="350px">
+            <br>
+            <br>
+            <label class="radio-inline">
+               <input type="radio" name="belum_ujian" value="1"> Approve
+            </label>
+            <label class="radio-inline">
+               <input type="radio" name="belum_ujian" value="0"> Disapprove
+            </label>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-primary" value="Simpan"/>
+         </div>
+      </div>
+   </div>
+</div>
+<?php echo form_close(); ?>
+
 <?php $this->load->view('template/js'); ?>
+
+<script type="text/javascript">
+   $(document).ready(function () {
+
+      $('.konfirm_ujian').click(function (e) {
+         e.preventDefault();
+         $.getJSON($(this).attr("href"), function (data) {
+            $('input[name="user_id"]').val(data.id);
+            $('#image_name').attr(
+                "src",
+                "<?php echo site_url('uploads/bukti_transfer/'); ?>/" + data.bukti_transfer
+            );
+         });
+         $('#modal_approval').modal();
+      });
+   });
+</script>
 </body>
 </html>

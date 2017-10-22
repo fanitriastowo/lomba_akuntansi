@@ -49,6 +49,28 @@ class administrator extends CI_Controller {
    }
 
    /**
+    * approwe members test
+    */
+   public function approve_test() {
+      $user_id = $this->input->post('user_id');
+      $status_ujian = $this->input->post('belum_ujian');
+      $user = array(
+          'belum_ujian' => $status_ujian
+      );
+
+      $this->ion_auth->update($user_id, $user);
+      redirect("administrator");
+   }
+
+   /**
+    * approwe members test
+    */
+   public function get_user_transfer_image($id) {
+      $user = $this->ion_auth->user($id)->row();
+      return $this->output->set_content_type('application/json')->set_output(json_encode($user));
+   }
+
+   /**
     * Admin Logout
     */
    public function logout() {
