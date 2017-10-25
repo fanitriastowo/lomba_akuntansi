@@ -105,6 +105,16 @@
 <script type="text/javascript">
    $(document).ready(function () {
 
+      $('.konfirm_ujian')
+          .hide()  // Hide it initially
+          .ajaxStart(function() {
+             $(this).show();
+          })
+          .ajaxStop(function() {
+             $(this).hide();
+          })
+      ;
+
       $('.konfirm_ujian').click(function (e) {
          e.preventDefault();
          $.getJSON($(this).attr("href"), function (data) {

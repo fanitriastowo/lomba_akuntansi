@@ -92,8 +92,6 @@
                            <span class="text-muted">Kisi-kisi:</span>
                            <p>Akuntansi keuangan, akuntansi biaya, akuntansi Manajemen</p><br>
 
-                           <br>
-
                            <small class="text-muted">Tanggal Registrasi:
                               <?php echo date('j F Y', strtotime($model->tanggal_daftar)); ?></small>
                            <br>
