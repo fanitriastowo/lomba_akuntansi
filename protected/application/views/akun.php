@@ -89,6 +89,9 @@
                            <span class="text-muted">Jawaban:</span>
                            <strong><?php echo $model->jawaban; ?></strong><br>
 
+                           <span class="text-muted">Kisi-kisi:</span>
+                           <p>Akuntansi keuangan, akuntansi biaya, akuntansi Manajemen</p><br>
+
                            <br>
 
                            <small class="text-muted">Tanggal Registrasi:
@@ -98,10 +101,12 @@
                            <?php // cek jika members sudah upload bukti transfer
                            switch ($model->sudah_transfer) {
                               case 0 :
-                                 echo '<small class="text-muted label label-danger">* Anda belum mengupload bukti transfer</small>';
+                                 echo '<small class="text-muted label label-danger">* 
+                                       Anda belum mengupload bukti transfer</small>';
                                  break;
                               case 1 :
-                                 echo '<small class="text-muted label label-success">* Anda sudah mengupload bukti transfer</small>';
+                                 echo '<small class="text-muted label label-success">* 
+                                       Anda sudah mengupload bukti transfer</small>';
                                  break;
                            }
                            ?>
