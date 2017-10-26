@@ -115,12 +115,15 @@
    $(document).ready(function () {
 
       let $loading = $('#loading_animation').hide();
+      let $real_image = $('#image_name').hide();
       $(document)
           .ajaxStart(function () {
              $loading.show();
+             $real_image.hide();
           })
           .ajaxStop(function () {
              $loading.hide();
+             $real_image.show();
           });
 
       $('.konfirm_ujian').click(function (e) {
