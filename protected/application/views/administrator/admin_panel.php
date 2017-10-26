@@ -10,6 +10,9 @@
    <div class="panel panel-default">
       <div class="panel-body">
          <h1 class="text-center">Daftar Peserta</h1>
+
+
+
          <table class="table table-condensed table-bordered table-striped table-hover">
             <tr>
                <th width="4%">No</th>
@@ -81,6 +84,12 @@
             <h4 class="modal-title" id="myModalLabel">Bukti Transfer</h4>
          </div>
          <div class="modal-body text-center">
+
+            <div  id="loading_animation" class="text-center">
+               <img src="<?php echo site_url("/assets/images/ajax-loader.gif"); ?>"
+                    alt="loading...">
+            </div>
+
             <img src="" id="image_name" class="img-thumbnail" width="350px">
             <br>
             <br>
@@ -105,15 +114,14 @@
 <script type="text/javascript">
    $(document).ready(function () {
 
-      $('.konfirm_ujian')
-          .hide()  // Hide it initially
-          .ajaxStart(function() {
-             $(this).show();
+      let $loading = $('#loading_animation').hide();
+      $(document)
+          .ajaxStart(function () {
+             $loading.show();
           })
-          .ajaxStop(function() {
-             $(this).hide();
-          })
-      ;
+          .ajaxStop(function () {
+             $loading.hide();
+          });
 
       $('.konfirm_ujian').click(function (e) {
          e.preventDefault();
