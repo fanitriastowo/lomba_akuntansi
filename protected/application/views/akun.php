@@ -22,9 +22,6 @@
          <a class="navbar-brand" href="#">Lomba Akuntansi </a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
-         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-         </ul>
          <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -47,19 +44,31 @@
             <div class="panel-body">
                <div class="row">
                   <div class="col-md-12 lead">User profile
+
                      <hr>
+
+                     <?php if ($this->session->flashdata('belum_dimulai')): ?>
+                        <div class="alert alert-info alert-dismissible" role="alert">
+                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span></button>
+                           Ooppsss.... Sepertinya ujian belum dibuka.
+                        </div>
+                     <?php endif ?>
+
                   </div>
                </div>
                <div class="row">
                   <div class="col-md-4 text-center">
+                     <h4>Avatar</h4>
                      <img width="120"
                           class="img-circle avatar avatar-original"
-                          style="-webkit-user-select:none; display:block; margin:auto;"
                           src="<?php echo site_url("uploads/users/" . $model->photo); ?>">
                      <br>
+                     <br>
+
+                     <h4>Bukti Transfer</h4>
                      <img width="120"
-                          class="img-circle avatar avatar-original"
-                          style="-webkit-user-select:none; display:block; margin:auto;"
+                          class="img-thumbnail avatar avatar-original"
                           src="<?php echo site_url("uploads/bukti_transfer/" . $model->bukti_transfer); ?>">
                   </div>
                   <div class="col-md-8">
@@ -99,7 +108,7 @@
                            <?php // cek jika members sudah upload bukti transfer
                            switch ($model->sudah_transfer) {
                               case 0 :
-                                 echo '<small class="text-muted label label-danger">* 
+                                 echo '<small class="text-muted label label-danger"> 
                                        Anda belum mengupload bukti transfer</small>';
                                  break;
                               case 1 :
@@ -128,6 +137,10 @@
                         target="_blank"
                         href="<?php echo site_url('akun/cetak_kwitansi'); ?>">
                         <i class="glyphicon glyphicon-print"></i> Kwitansi
+                     </a>
+                     <a class="btn btn-default pull-left"
+                        href="<?php echo site_url('soal'); ?>">
+                        <i class="glyphicon glyphicon-book"></i> Mulai Test
                      </a>
                   </div>
                </div>
