@@ -83,8 +83,8 @@
       <header class="header-site">
          <div class="logo-site animated bounceInDown" data-animation-delay="700">
             <!--<img class="img-responsive" src="images/logo.png" data-at2x="images/logo@2x.png" alt="Logo" />-->
-            <h1>Lomba Akuntansi 2017</h1>
-            <h3>Pendaftaran Peserta dimulai dalam:</h3>
+            <h2>Lomba Akuntansi 2017</h2>
+            <p>Pendaftaran Peserta dimulai dalam:</p>
          </div>
       </header>
       <!-- /header -->
@@ -106,9 +106,12 @@
 
                                  <!-- content slide -->
                                  <div class="content-slide">
-                                    <!-- Clock Countdown -->
-                                    <!-- <div id="clock-countdown" class="animated bounceInDown"-->
-                                    <!--      data-animation-delay="700"></div>-->
+                                    <!--
+                                    Clock Countdown
+                                    <div id="clock-countdown" class="animated bounceInDown"
+                                    data-animation-delay="700"></div>
+                                    -->
+
                                     <a class="btn btn-default btn-lg"
                                        href="<?php echo site_url('registration') ?>">Registrasi</a>
 
@@ -126,19 +129,19 @@
                         <div class="container">
                            <div class="row">
                               <div class="col-md-4">
-                                 <p>Tanggal Penting</p>
+                                 <strong>Tanggal Penting</strong>
                                  <ol>
                                     <li>Pendaftaran : 9 Oktober - 4 November 2017</li>
                                     <li>Pelakasanaan CBT : 10 - 11 November 2017</li>
                                  </ol>
                               </div>
                               <div class="col-md-4">
-                                 <p>Pamflet</p>
+                                 <strong>Pamflet</strong>
                                  <img class="img-responsive img-thumbnail"
                                       src="<?php echo site_url("assets/images/contents/pamflet.jpg"); ?>">
                               </div>
                               <div class="col-md-4">
-                                 <p>Alur Registrasi</p>
+                                 <strong>Alur Registrasi</strong>
                                  <img class="img-responsive img-thumbnail"
                                       src="<?php echo site_url("assets/images/contents/alur.png"); ?>">
                               </div>
@@ -150,7 +153,7 @@
                               <!-- copyright -->
                               <footer class="copy-right animated bounceInUp" data-animation-delay="700">
                                  <div class="copyright">
-                                    © 2017 <a target="_blank" href="ekonomi.ump.ac.id">Fakultas Ekonomi &
+                                    © 2017 <a target="_blank" href="http://ekonomi.ump.ac.id">Fakultas Ekonomi &
                                        Bisnis</a> - All Rights Reserved
                                  </div>
                               </footer><!-- /copyright -->
