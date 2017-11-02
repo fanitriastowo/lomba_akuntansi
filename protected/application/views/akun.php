@@ -99,7 +99,13 @@
                            <strong><?php echo $model->jawaban; ?></strong><br>
 
                            <span class="text-muted">Kisi-kisi:</span>
-                           <p>Akuntansi keuangan, akuntansi biaya, akuntansi Manajemen</p><br>
+                           <ul>
+                              <li>Akuntansi Dasar / Pengantar Akuntansi</li>
+                              <li>Akuntansi Biaya</li>
+                              <li>Akuntansi Keuangan</li>
+                              <li>Akuntansi Manajemen</li>
+                              <li>Sistem Informasi Akuntansi</li>
+                           </ul>
 
                            <small class="text-muted">Tanggal Registrasi:
                               <?php echo date('j F Y', strtotime($model->tanggal_daftar)); ?></small>
