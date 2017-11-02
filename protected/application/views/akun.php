@@ -54,6 +54,7 @@
                            Ooppsss.... Sepertinya ujian belum dibuka.
                         </div>
                      <?php endif ?>
+                     
 
                   </div>
                </div>
@@ -139,8 +140,8 @@
                         class="btn btn-default pull-right">
                         <i class="glyphicon glyphicon-pencil"></i> Edit
                      </a>
-                     <a class="btn btn-default pull-right"
-                        target="_blank"
+                     <a id="cetak_kwitansi"
+                        class="btn btn-default pull-right"
                         href="<?php echo site_url('akun/cetak_kwitansi'); ?>">
                         <i class="glyphicon glyphicon-print"></i> Kwitansi
                      </a>
@@ -186,5 +187,15 @@
 <?php echo form_close(); ?>
 
 <?php $this->load->view('template/js'); ?>
+
+<?php if ($this->session->flashdata('cetak_kwitansi')): ?>
+   
+   <script type="text/javascript">
+      $(document).ready(function() {
+         location.href="<?php echo site_url('akun/cetak_kwitansi'); ?>";
+      });
+   </script>
+
+<?php endif ?>
 </body>
 </html>

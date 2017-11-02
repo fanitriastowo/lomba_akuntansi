@@ -105,6 +105,7 @@ class registration extends CI_Controller {
 
       $this->ion_auth->register($generated_id, $password, null, $additional_data);
       $this->ion_auth->login($generated_id, $password);
+      $this->session->set_flashdata('cetak_kwitansi', TRUE);
       redirect('akun');
 
    }
