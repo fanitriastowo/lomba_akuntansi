@@ -131,14 +131,16 @@
                               <div class="col-md-4">
                                  <strong>Tanggal Penting</strong>
                                  <ol>
-                                    <li>Pendaftaran : 9 Oktober - 4 November 2017</li>
-                                    <li>Pelakasanaan CBT : 10 - 11 November 2017</li>
+                                    <li>Pendaftaran Gel 1 : 9 Oktober - 4 November 2017</li>
+                                    <li>Pendaftaran Gel 2 : 5 November - 16 November 2017</li>
+                                    <li>CBT Gel 1 : 10 - 11 November 2017</li>
+                                    <li>CBT Gel 2 : 17 - 18 November 2017</li>
                                  </ol>
                               </div>
                               <div class="col-md-4">
                                  <strong>Pamflet</strong>
                                  <img class="img-responsive img-thumbnail"
-                                      src="<?php echo site_url("assets/images/contents/pamflet.jpg"); ?>">
+                                      src="<?php echo site_url("assets/images/contents/pamflet_2.jpg"); ?>">
                               </div>
                               <div class="col-md-4">
                                  <strong>Alur Registrasi</strong>
