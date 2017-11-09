@@ -12,7 +12,6 @@
          <h1 class="text-center">Daftar Peserta</h1>
 
 
-
          <table class="table table-condensed table-bordered table-striped table-hover">
             <tr>
                <th width="4%">No</th>
@@ -29,13 +28,18 @@
             <?php foreach ($users as $user) : ?>
 
                <?php
-               switch ($user->sudah_transfer) {
-                  case 0 :
-                     $status = "warning";
-                     break;
-                  case 1 :
+               if ($user->sudah_transfer == 0) { // if user isn't transfer
+                  $status = "danger";
+               } else { // if user is transfered
+                  $status = "warning";
+
+                  if ($user->belum_ujian == 1) { // if user sudah di-approve
                      $status = "success";
-                     break;
+
+                     if ($user->sudah_ujian == 1) { // if user sudah ujian
+                        $status = "info";
+                     }
+                  }
                }
                ?>
 
@@ -60,10 +64,10 @@
             <?php endforeach; ?>
          </table>
          <strong>Ket:</strong> <br>
-         <code>
-            Sudah Transfer <label class="label label-success">status</label>
-            Belum Transfer <label class="label label-warning">status</label>
-         </code>
+         <label class="label label-danger">status</label> <code>Belum Transfer</code> <br>
+         <label class="label label-warning">status</label> <code>Sudah Transfer</code> <br>
+         <label class="label label-success">status</label> <code>Sudah di-Approve</code> <br>
+         <label class="label label-info">status</label> <code>Sudah Ujian</code> <br>
       </div>
       <div class="panel-footer">
          <a class="btn btn-primary btn-md btn-block" href="<?php echo site_url('administrator/logout'); ?>">Logout</a>
@@ -85,7 +89,7 @@
          </div>
          <div class="modal-body text-center">
 
-            <div  id="loading_animation" class="text-center">
+            <div id="loading_animation" class="text-center">
                <img src="<?php echo site_url("/assets/images/ajax-loader.gif"); ?>"
                     alt="loading...">
             </div>
