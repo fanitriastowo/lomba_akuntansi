@@ -57,6 +57,16 @@
                      Kabupaten <?php echo $principal->kabupaten; ?>. Provinsi <?php echo $principal->provinsi; ?>.<br>
                   </strong></td>
             </tr>
+            <tr>
+               <td width="10%" class="text-left">Perhatian:</td>
+               <td width="30%" class="text-left">
+                  <ol>
+                     <li>Jumlah soal adalah 30 dan waktu 60 menit.</li>
+                     <li>Sediakan kertas kosong sebagai lembar menghitung</li>
+                     <li>Soal berupa pilihan ganda</li>
+                  </ol>
+               </td>
+            </tr>
             </tbody>
          </table>
       </div>

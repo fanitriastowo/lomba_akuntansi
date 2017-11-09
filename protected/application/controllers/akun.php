@@ -77,13 +77,27 @@ class Akun extends CI_Controller {
     * menampilkan halaman persiapan pengerjaan soal
     */
    public function persiapan() {
+      $pertanyaanku = $this->input->post('pertanyaanku');
+
+      $principal = $this->ion_auth->user()->row();
+
       // redirect ke login jika belum
-      if (!$this->ion_auth->logged_in()) {
-         redirect('login');
+      if (strtoupper($principal->jawaban) != strtoupper($pertanyaanku)) {
+         $this->session->set_flashdata('pertanyaanku_not_valid', TRUE);
+         redirect('akun');
+      }
+
+
+      // redirect ke login jika belum
+      if (!$this->ion_auth->logged_in()) redirect('login');
+
+      // redirect if it isn't transfered yet
+      if ($principal->belum_ujian == 0) {
+         $this->session->set_flashdata('belum_transfer', TRUE);
+         redirect('akun');
       }
 
       // ambil principal
-      $principal = $this->ion_auth->user()->row();
 
       $this->load->model('ujian_m');
       $is_idle = $this->ujian_m->get_by('user_id', $principal->id, TRUE);
@@ -98,10 +112,10 @@ class Akun extends CI_Controller {
          // jika sedang ujian (status idle)
          if ($is_idle->idle == 1) {
 
-            // waktu_sekarang + (90 menit - (autosave_time - waktu_mulai))
+            // waktu_sekarang + (60 menit - (autosave_time - waktu_mulai))
             $formula = (
                 time() +
-                (5400 -
+                (3600 -
                     (
                         strtotime($is_idle->autosave_time) -
                         strtotime($is_idle->waktu_mulai)
@@ -118,10 +132,10 @@ class Akun extends CI_Controller {
          }
       }
 
-      // load soal model
+// load soal model
       $this->load->model('soal_m');
 
-      //ambil paket soal 1 - 7 diacak dari database simpan ke table ujian
+//ambil paket soal 1 - 7 diacak dari database simpan ke table ujian
       $this->soal_m->get_paket_soal($principal->id, 2);
 
       $data['principal'] = $principal;
@@ -129,7 +143,8 @@ class Akun extends CI_Controller {
    }
 
 
-   private function __generate_image_name() {
+   private
+   function __generate_image_name() {
       return $number = rand(10000, 99999);
    }
 

@@ -54,7 +54,23 @@
                            Ooppsss.... Sepertinya ujian belum dibuka.
                         </div>
                      <?php endif ?>
-                     
+
+                     <?php if ($this->session->flashdata('pertanyaanku_not_valid')): ?>
+                        <div class="alert alert-warning alert-dismissible" role="alert">
+                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span></button>
+                           Ooppsss.... Jawaban yang Anda masukan tidak sesuai. Coba lagi ingat-ingat.
+                        </div>
+                     <?php endif ?>
+
+                     <?php if ($this->session->flashdata('belum_transfer')): ?>
+                        <div class="alert alert-warning alert-dismissible" role="alert">
+                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span></button>
+                           Ooppsss.... Anda belum melakukan transfer atau belum di Approve oleh kami.
+                        </div>
+                     <?php endif ?>
+
 
                   </div>
                </div>
@@ -145,10 +161,10 @@
                         href="<?php echo site_url('akun/cetak_kwitansi'); ?>">
                         <i class="glyphicon glyphicon-print"></i> Kwitansi
                      </a>
-                     <a class="btn btn-default pull-left"
-                        href="<?php echo site_url('akun/persiapan'); ?>">
-                        <i class="glyphicon glyphicon-book"></i> Mulai Test
-                     </a>
+                     <button type="button" data-toggle="modal" data-target="#modal_tes"
+                             class="btn btn-default pull-left">
+                        <i class="glyphicon glyphicon-book"></i> Mulai Tes
+                     </button>
                   </div>
                </div>
             </div>
@@ -186,13 +202,46 @@
 </div>
 <?php echo form_close(); ?>
 
+<!-- Modal -->
+<?php echo form_open_multipart('akun/persiapan', 'class="form-horizontal"'); ?>
+<div class="modal fade" id="modal_tes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                       aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+         </div>
+         <div class="modal-body">
+
+            <div class="form-group">
+               <label for="add_filename" class="col-sm-2 control-label"><?php echo $model->pertanyaan ?>:</label>
+            </div>
+
+            <div class="form-group">
+               <label for="add_filename" class="col-sm-2 control-label">Jawaban:</label>
+               <div class="col-sm-10">
+                  <textarea cols="50" name="pertanyaanku" rows="3"></textarea>
+               </div>
+            </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Tes</button>
+         </div>
+      </div>
+   </div>
+</div>
+<?php echo form_close(); ?>
+
+
 <?php $this->load->view('template/js'); ?>
 
 <?php if ($this->session->flashdata('cetak_kwitansi')): ?>
-   
+
    <script type="text/javascript">
-      $(document).ready(function() {
-         location.href="<?php echo site_url('akun/cetak_kwitansi'); ?>";
+      $(document).ready(function () {
+         location.href = "<?php echo site_url('akun/cetak_kwitansi'); ?>";
       });
    </script>
 
