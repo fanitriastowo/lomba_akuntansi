@@ -1,15 +1,7 @@
-INSERT INTO `cbt_mastermapel_paketsoal_jointable` (`idmapel`, `idpaket`) VALUES
+INSERT INTO `akuntansi_mastermapel_paketsoal_jointable` (`idmapel`, `idpaket`) VALUES
    (1, 1), (1, 2), 
-   (2, 3), (1, 4), 
-   (3, 5), 
-   (4, 6), 
-   (5, 7), 
-   (6, 8), 
-   (7, 9), 
-   (8, 10), (8, 11), 
-   (9, 12), (9, 13), 
-   (10, 14), (10, 15), 
-   (11, 16), (11, 17), 
-   (12, 18), (12, 19), 
-   (13, 20), (13, 21), 
-   (14, 22), (14, 23);
+   (2, 3), (2, 4),
+   (3, 5), (3, 6),
+   (4, 7), (4, 8),
+   (5, 9), (5, 10),
+   (6, 11), (6, 12);

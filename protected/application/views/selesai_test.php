@@ -12,7 +12,7 @@
 			<h1 class="text-center">Selesai Ujian</h1>
 			<h1 class="text-center">
 				Terima kasih telah menyelesaikan Test dengan baik. 
-				Silahkan menghubungi Petugas Entry Data untuk mengetahui hasil test.
+				Tunggu pengumuman selanjutnya untuk mungetahui hasil test.
 			</h1>
       	</div>
       	<div class="panel-footer">

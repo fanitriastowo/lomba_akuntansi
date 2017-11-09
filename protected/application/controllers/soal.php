@@ -13,11 +13,6 @@ class Soal extends CI_Controller {
     * Access Home Page
     */
    public function index() {
-
-      $this->session->set_flashdata('belum_dimulai', TRUE);
-      redirect('akun');
-
-      /*
       // redirect ke login jika belum
       if (!$this->ion_auth->logged_in()) {
          redirect('login');
@@ -25,12 +20,6 @@ class Soal extends CI_Controller {
 
       // load principal
       $principal = $this->ion_auth->user()->row();
-
-      // assume, operator sudah mengaktifkan ujian (open exam)
-      if (!$principal->sudah_transfer == 1) {
-         $this->session->set_flashdata('inactived', TRUE);
-         redirect('login/persiapan');
-      }
 
       $this->load->model('soal_m');
       $data['list_soal'] = array();
@@ -83,7 +72,7 @@ class Soal extends CI_Controller {
 
          // get current time and calculate finish time
          $start_time = time();
-         $end_time = 5400; // add 90 Minute
+         $end_time = 3600; // add 90 Minute
          $finish = $start_time + $end_time;
 
          // update status idle menjadi TRUE
@@ -100,7 +89,6 @@ class Soal extends CI_Controller {
       $data['finish_time'] = date('m/d/Y H:i:s', $finish);
       $data['user'] = $principal;
       $this->load->view('soal', $data);
-      */
    }
 
    /**
@@ -138,13 +126,49 @@ class Soal extends CI_Controller {
     */
    public function selesai_test() {
       // redirect quisioner
-      redirect('quisioner');
+      // redirect('quisioner');
+      $this->load->view('selesai_test');
    }
 
    /**
     * load halaman selesai
     */
    public function selesai() {
+      // load model
+      $this->load->model('ujian_m');
+      $this->load->model('soal_m');
+
+      $principal = $this->ion_auth->user()->row();
+
+      // update status user menjadi in_active
+      $value = array('active' => 0);
+      $this->ion_auth->update($principal->id, $value);
+
+      $ujian_by_userid = $this->ujian_m->get_by('user_id', $principal->id, TRUE);
+
+      // start sync
+      if ($ujian_by_userid->stssync == 0) {
+         $benar = 0;
+         $salah = 0;
+         $result = $this->jawaban_m->get_by('user_id', $principal->id);
+         foreach ($result as $key => $value) {
+            $single_soal = $this->soal_m->get($value->soal_id, TRUE);
+            if ($value->jawaban == $single_soal->kunci_jawaban) {
+               $benar++;
+            } else {
+               $salah++;
+            }
+         }
+
+
+         // update status idle dan stsujian lokal
+         $ujian_data = array('idle' => 0, 'stsujian' => 2, 'stssync' => 1);
+         $this->ujian_m->save($ujian_data, $ujian_by_userid->id);
+
+      }
+
+      // logout
+      $this->ion_auth->logout();
       $this->load->view('selesai_test');
    }
 

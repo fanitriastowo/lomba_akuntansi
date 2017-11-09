@@ -72,6 +72,63 @@ class Akun extends CI_Controller {
       redirect('akun');
    }
 
+
+   /**
+    * menampilkan halaman persiapan pengerjaan soal
+    */
+   public function persiapan() {
+      // redirect ke login jika belum
+      if (!$this->ion_auth->logged_in()) {
+         redirect('login');
+      }
+
+      // ambil principal
+      $principal = $this->ion_auth->user()->row();
+
+      $this->load->model('ujian_m');
+      $is_idle = $this->ujian_m->get_by('user_id', $principal->id, TRUE);
+
+      // jika user baru dan belum pernah ujian
+      if ($is_idle == NULL) {
+         // simpan principal id ke ujian
+         $save_ujian = array('user_id' => $principal->id);
+         $this->ujian_m->save($save_ujian);
+
+      } else {
+         // jika sedang ujian (status idle)
+         if ($is_idle->idle == 1) {
+
+            // waktu_sekarang + (90 menit - (autosave_time - waktu_mulai))
+            $formula = (
+                time() +
+                (5400 -
+                    (
+                        strtotime($is_idle->autosave_time) -
+                        strtotime($is_idle->waktu_mulai)
+                    )
+                )
+            );
+
+            // update table ujian dengan waktu selesai yang diganti
+            $save_ujian = array('waktu_selesai' => date('Y-m-d H:i:s', $formula));
+            //$this->ujian_m->save($save_ujian, $is_idle->id);
+
+            // redirect ke soal
+            redirect('soal');
+         }
+      }
+
+      // load soal model
+      $this->load->model('soal_m');
+
+      //ambil paket soal 1 - 7 diacak dari database simpan ke table ujian
+      $this->soal_m->get_paket_soal($principal->id, 2);
+
+      $data['principal'] = $principal;
+      $this->load->view('persiapan', $data);
+   }
+
+
    private function __generate_image_name() {
       return $number = rand(10000, 99999);
    }

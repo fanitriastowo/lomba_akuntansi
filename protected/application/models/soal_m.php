@@ -19,9 +19,9 @@ class Soal_m extends MY_Model {
     * @return array of object soal
     */
    public function get_with_jawaban($idpaket, $iduser) {
-      $this->db->select('cbt_soal.*, cbt_soal_tambahan.isi AS soal_tambahan');
-      $this->db->join('cbt_soal_tambahan', 'cbt_soal.tambahan = cbt_soal_tambahan.id', 'LEFT OUTER');
-      $this->db->where('cbt_soal.idpaket', $idpaket);
+      $this->db->select('akuntansi_soal.*, akuntansi_soal_tambahan.isi AS soal_tambahan');
+      $this->db->join('akuntansi_soal_tambahan', 'akuntansi_soal.tambahan = akuntansi_soal_tambahan.id', 'LEFT OUTER');
+      $this->db->where('akuntansi_soal.idpaket', $idpaket);
       $list_of_soal = parent::get();
       $result = array();
       foreach ($list_of_soal as $key => $value) {
@@ -56,9 +56,9 @@ class Soal_m extends MY_Model {
     * @return array of object soal
     */
    public function get_with_tambahan($idpaket) {
-      $this->db->select('cbt_soal.*, cbt_soal_tambahan.isi AS soal_tambahan');
-      $this->db->join('cbt_soal_tambahan', 'cbt_soal.tambahan = cbt_soal_tambahan.id', 'LEFT OUTER');
-      $this->db->where('cbt_soal.idpaket', $idpaket);
+      $this->db->select('akuntansi_soal.*, akuntansi_soal_tambahan.isi AS soal_tambahan');
+      $this->db->join('akuntansi_soal_tambahan', 'akuntansi_soal.tambahan = akuntansi_soal_tambahan.id', 'LEFT OUTER');
+      $this->db->where('akuntansi_soal.idpaket', $idpaket);
       return parent::get();
    }
    
@@ -136,24 +136,28 @@ class Soal_m extends MY_Model {
       } else { // Jenis Soal IPS
 
          // ambil paket Bahasa Indonesia IPS secara random
-         $paket1 = $this->mastermapel_paketsoal_jointable_m->get_paketsoal_by_idmapel(2);
+         $paket1 = $this->mastermapel_paketsoal_jointable_m->get_paketsoal_by_idmapel(1);
          $rand_keys1 = array_rand($paket1, 1);
          
          // ambil paket Bahasa Inggris IPS secara random
-         $paket2 = $this->mastermapel_paketsoal_jointable_m->get_paketsoal_by_idmapel(4);
+         $paket2 = $this->mastermapel_paketsoal_jointable_m->get_paketsoal_by_idmapel(2);
          $rand_keys2 = array_rand($paket2, 1);
          
          // ambil paket Agama IPS secara random
-         $paket3 = $this->mastermapel_paketsoal_jointable_m->get_paketsoal_by_idmapel(5);
+         $paket3 = $this->mastermapel_paketsoal_jointable_m->get_paketsoal_by_idmapel(3);
          $rand_keys3 = array_rand($paket3, 1);
 
          // ambil paket Matematika IPS secara random
-         $paket4 = $this->mastermapel_paketsoal_jointable_m->get_paketsoal_by_idmapel(7);
+         $paket4 = $this->mastermapel_paketsoal_jointable_m->get_paketsoal_by_idmapel(4);
          $rand_keys4 = array_rand($paket4, 1);
 
          // ambil paket IPS secara random
-         $paket5 = $this->mastermapel_paketsoal_jointable_m->get_paketsoal_by_idmapel(3);
+         $paket5 = $this->mastermapel_paketsoal_jointable_m->get_paketsoal_by_idmapel(5);
          $rand_keys5 = array_rand($paket5, 1);
+
+         // ambil paket IPS secara random
+         $paket6 = $this->mastermapel_paketsoal_jointable_m->get_paketsoal_by_idmapel(6);
+         $rand_keys6 = array_rand($paket6, 1);
 
          // update colom paket user
          $data = array(
@@ -163,7 +167,7 @@ class Soal_m extends MY_Model {
             'paket3' => $paket3[$rand_keys3]->idpaket,
             'paket4' => $paket4[$rand_keys4]->idpaket,
             'paket5' => $paket5[$rand_keys5]->idpaket,
-            'paket6' => NULL,
+            'paket6' => $paket6[$rand_keys6]->idpaket,
             'paket7' => NULL
          );
          /*$data = array(
@@ -176,12 +180,11 @@ class Soal_m extends MY_Model {
             'paket6' => NULL,
             'paket7' => NULL
          );*/
-         
+
          // simpan ujian baru jika belum ada record di table ujian, otherwise update
          $this->ujian_m->save($data, $ujian->id);
 
       }
-      return $data;
    }
 
 }

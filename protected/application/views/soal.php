@@ -246,7 +246,7 @@
       $('.btnSimpanModal').click(function(e) {
          e.preventDefault();
          localStorage.removeItem("jumlahSoal");
-         document.location = "<?php echo site_url('soal/selesai_test'); ?>";
+         document.location = "<?php echo site_url('soal/selesai'); ?>";
       });
 
    });

@@ -10,10 +10,10 @@ class Login extends CI_Controller {
     * Login page
     */
    public function index() {
-     // redirect if already logged in
-     if ($this->ion_auth->logged_in()) {
-        redirect('akun');
-     }
+      // redirect if already logged in
+      if ($this->ion_auth->logged_in()) {
+         redirect('akun');
+      }
       $this->load->view('login');
    }
 
@@ -33,7 +33,6 @@ class Login extends CI_Controller {
       $this->session->set_flashdata('invalid', TRUE);
       redirect('login');
    }
-
 
    /**
     * Logout Peserta

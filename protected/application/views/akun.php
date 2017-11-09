@@ -146,7 +146,7 @@
                         <i class="glyphicon glyphicon-print"></i> Kwitansi
                      </a>
                      <a class="btn btn-default pull-left"
-                        href="<?php echo site_url('soal'); ?>">
+                        href="<?php echo site_url('akun/persiapan'); ?>">
                         <i class="glyphicon glyphicon-book"></i> Mulai Test
                      </a>
                   </div>
