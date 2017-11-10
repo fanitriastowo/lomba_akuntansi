@@ -25,19 +25,30 @@
             </tr>
             <?php $no = 1; ?>
             <?php $status = ""; ?>
+            <?php $status_belum_transfer = 0; ?>
+            <?php $status_sudah_transfer = 0; ?>
+            <?php $status_sudah_diapprove = 0; ?>
+            <?php $status_sudah_ujian = 0; ?>
             <?php foreach ($users as $user) : ?>
 
                <?php
                if ($user->sudah_transfer == 0) { // if user isn't transfer
                   $status = "danger";
+                  $status_belum_transfer++;
+
                } else { // if user is transfered
                   $status = "warning";
+                  $status_sudah_transfer++;
 
                   if ($user->belum_ujian == 1) { // if user sudah di-approve
                      $status = "success";
+                     $status_sudah_diapprove++;
+                     $status_sudah_transfer--;
 
                      if ($user->sudah_ujian == 1) { // if user sudah ujian
                         $status = "info";
+                        $status_sudah_ujian++;
+                        $status_sudah_diapprove--;
                      }
                   }
                }
@@ -64,10 +75,14 @@
             <?php endforeach; ?>
          </table>
          <strong>Ket:</strong> <br>
-         <label class="label label-danger">status</label> <code>Belum Transfer</code> <br>
-         <label class="label label-warning">status</label> <code>Sudah Transfer</code> <br>
-         <label class="label label-success">status</label> <code>Sudah di-Approve</code> <br>
-         <label class="label label-info">status</label> <code>Sudah Ujian</code> <br>
+         <label class="label label-danger">status</label> <code>Belum Transfer</code> -> <label
+                 class="label label-default"><?php echo $status_belum_transfer; ?></label><br>
+         <label class="label label-warning">status</label> <code>Sudah Transfer</code> -> <label
+                 class="label label-default"><?php echo $status_sudah_transfer; ?></label><br>
+         <label class="label label-success">status</label> <code>Sudah di-Approve</code> -> <label
+                 class="label label-default"><?php echo $status_sudah_diapprove; ?></label><br>
+         <label class="label label-info">status</label> <code>Sudah Ujian</code> -> <label
+                 class="label label-default"><?php echo $status_sudah_ujian; ?></label> <br>
       </div>
       <div class="panel-footer">
          <a class="btn btn-primary btn-md btn-block" href="<?php echo site_url('administrator/logout'); ?>">Logout</a>
