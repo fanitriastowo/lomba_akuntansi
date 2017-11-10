@@ -3,6 +3,7 @@
 <head>
    <title>Admin Panel</title>
    <?php $this->load->view('template/css'); ?>
+   <link rel="stylesheet" href="<?php echo site_url('assets/datatable/datatables.min.css'); ?>">
 </head>
 <body>
 
@@ -12,7 +13,8 @@
          <h1 class="text-center">Daftar Peserta</h1>
 
 
-         <table class="table table-condensed table-bordered table-striped table-hover">
+         <table id="peserta_table" class="table table-condensed table-bordered table-striped table-hover">
+            <thead>
             <tr>
                <th width="4%">No</th>
                <th>Registrasi</th>
@@ -23,6 +25,9 @@
                <th>No Telp</th>
                <th width="10%">Action</th>
             </tr>
+            </thead>
+            <tbody>
+
             <?php $no = 1; ?>
             <?php $status = ""; ?>
             <?php $status_belum_transfer = 0; ?>
@@ -53,7 +58,6 @@
                   }
                }
                ?>
-
                <tr class="<?php echo $status; ?>">
                   <td><?php echo $no; ?></td>
                   <td><?php echo $user->tanggal_daftar; ?></td>
@@ -71,8 +75,12 @@
                         <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>
                   </td>
                </tr>
+
                <?php $no++; ?>
             <?php endforeach; ?>
+
+            </tbody>
+
          </table>
          <strong>Ket:</strong> <br>
          <label class="label label-danger">status</label> <code>Belum Transfer</code> -> <label
@@ -129,9 +137,12 @@
 <?php echo form_close(); ?>
 
 <?php $this->load->view('template/js'); ?>
+<script src="<?php echo site_url('assets/datatable/datatables.min.js'); ?>"></script>
 
 <script type="text/javascript">
    $(document).ready(function () {
+
+      $('#peserta_table').DataTable();
 
       let $loading = $('#loading_animation').hide();
       let $real_image = $('#image_name').hide();
