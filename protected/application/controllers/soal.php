@@ -141,7 +141,10 @@ class Soal extends CI_Controller {
       $principal = $this->ion_auth->user()->row();
 
       // update status user menjadi in_active
-      $value = array('active' => 0);
+      $value = array(
+          'active' => 0,
+          'sudah_ujian' => 1
+      );
       $this->ion_auth->update($principal->id, $value);
 
       $ujian_by_userid = $this->ujian_m->get_by('user_id', $principal->id, TRUE);

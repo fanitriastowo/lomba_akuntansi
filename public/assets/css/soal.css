@@ -9,7 +9,7 @@
 .tabs-left {
    height: 450px;
    overflow-y: scroll;
-   width: 100%;
+   width: 125%;
 }
 .panel {
    background: #ededed;
