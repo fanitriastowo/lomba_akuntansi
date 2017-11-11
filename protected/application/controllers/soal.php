@@ -72,7 +72,7 @@ class Soal extends CI_Controller {
 
          // get current time and calculate finish time
          $start_time = time();
-         $end_time = 3600; // add 90 Minute
+         $end_time = 3600; // add 60 Minute
          $finish = $start_time + $end_time;
 
          // update status idle menjadi TRUE
@@ -162,7 +162,6 @@ class Soal extends CI_Controller {
                $salah++;
             }
          }
-
 
          // update status idle dan stsujian lokal
          $ujian_data = array('idle' => 0, 'stsujian' => 2, 'stssync' => 1);

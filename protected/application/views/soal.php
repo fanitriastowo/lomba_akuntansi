@@ -288,7 +288,7 @@
       // start countdown
       countdown_timer(
           '<?php echo $finish_time; ?>',
-          "<?php echo site_url('soal/selesai_test'); ?>",
+          "<?php echo site_url('soal/selesai'); ?>",
           "<?php echo site_url('soal/update_waktu_selesai'); ?>"
       );
 
