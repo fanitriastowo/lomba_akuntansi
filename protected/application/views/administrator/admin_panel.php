@@ -71,7 +71,8 @@
                         class="btn btn-xs btn-success konfirm_ujian" title="Konfirmasi Ujian">
                         <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a>
 
-                     <a href="#" class="btn btn-xs btn-primary disabled" title="Detail Peserta" disabled="true">
+                     <a href="<?php echo site_url("administrator/get_user_detail/" . $user->id); ?>"
+                        class="btn btn-xs btn-primary get_detail" title="Detail Peserta">
                         <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>
                   </td>
                </tr>
@@ -136,14 +137,121 @@
 </div>
 <?php echo form_close(); ?>
 
+<!-- ==================================MODAL WINDOW==================================== -->
+<!-- Modal Import -->
+<form class="form-horizontal">
+   <div class="modal fade" id="modal_get_user_detail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h4 class="modal-title" id="myModalLabel">Detail User</h4>
+            </div>
+            <div class="modal-body text-center">
+
+               <div class="form-group">
+                  <label for="tanggal_daftar" class="col-sm-2 control-label">Tanggal Daftar</label>
+                  <div class="col-sm-10">
+                     <input type="text" class="form-control" id="tanggal_daftar" disabled>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="ID" class="col-sm-2 control-label">ID</label>
+                  <div class="col-sm-10">
+                     <input type="text" class="form-control" id="ID" disabled>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="nama" class="col-sm-2 control-label">Nama</label>
+                  <div class="col-sm-10">
+                     <input type="text" class="form-control" id="nama" disabled>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="phone" class="col-sm-2 control-label">Phone</label>
+                  <div class="col-sm-10">
+                     <input type="text" class="form-control" id="phone" disabled>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="tempat_lahir" class="col-sm-2 control-label">Tempat Lahir</label>
+                  <div class="col-sm-10">
+                     <input type="text" class="form-control" id="tempat_lahir" disabled>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="tanggal_lahir" class="col-sm-2 control-label">Tanggal Lahir</label>
+                  <div class="col-sm-10">
+                     <input type="text" class="form-control" id="tanggal_lahir" disabled>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="alamat" class="col-sm-2 control-label">Alamat</label>
+                  <div class="col-sm-10">
+                     <input type="text" class="form-control" id="alamat" disabled>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="asal_sekolah" class="col-sm-2 control-label">Asal Sekolah</label>
+                  <div class="col-sm-10">
+                     <input type="text" class="form-control" id="asal_sekolah" disabled>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="photo" class="col-sm-2 control-label">Photo</label>
+                  <div class="col-sm-10">
+                     <input type="text" class="form-control" id="photo" disabled>
+                  </div>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</form>
+
 <?php $this->load->view('template/js'); ?>
 <script src="<?php echo site_url('assets/datatable/datatables.min.js'); ?>"></script>
+<script src="<?php echo site_url('assets/js/jquery-dateFormat.min.js'); ?>"></script>
 
 <script type="text/javascript">
    $(document).ready(function () {
 
+      // jquery datatable
       $('#peserta_table').DataTable();
 
+      // bootstrap modal and datatable integration for get user detail
+      $('#peserta_table').on('click', '.get_detail', function (e) {
+         e.preventDefault();
+         $.getJSON($(this).attr("href"), function (data) {
+            $('#tanggal_daftar').val(data.tanggal_daftar);
+            $('#ID').val(data.username);
+            $('#nama').val(data.nama);
+            $('#phone').val(data.phone);
+            $('#tempat_lahir').val(data.tempat_lahir);
+            $('#tanggal_lahir').val(data.tanggal_lahir);
+            $('#alamat').val(data.jalan);
+            $('#asal_sekolah').val(data.asal_sekolah);
+            $('#photo').val('PHOTO');
+         });
+         $('#modal_get_user_detail').modal();
+      });
+
+      // bootstrap modal and datatable integration for get user image
+      $('#peserta_table').on('click', '.konfirm_ujian', function (e) {
+         e.preventDefault();
+         $.getJSON($(this).attr("href"), function (data) {
+            $('input[name="user_id"]').val(data.id);
+            $('#image_name').attr(
+                "src",
+                "<?php echo site_url('uploads/bukti_transfer/'); ?>/" + data.bukti_transfer
+            );
+         });
+         $('#modal_approval').modal();
+      });
+
+      // loading effect for fetching the image
       let $loading = $('#loading_animation').hide();
       let $real_image = $('#image_name').hide();
       $(document)
@@ -156,17 +264,7 @@
              $real_image.show();
           });
 
-      $('.konfirm_ujian').click(function (e) {
-         e.preventDefault();
-         $.getJSON($(this).attr("href"), function (data) {
-            $('input[name="user_id"]').val(data.id);
-            $('#image_name').attr(
-                "src",
-                "<?php echo site_url('uploads/bukti_transfer/'); ?>/" + data.bukti_transfer
-            );
-         });
-         $('#modal_approval').modal();
-      });
+
    });
 </script>
 </body>

@@ -44,7 +44,6 @@ class administrator extends CI_Controller {
     * Admin Panel
     */
    public function admin_panel() {
-
       $model['users'] = $this->ion_auth->users(2)->result();
       $this->load->view('administrator/admin_panel', $model);
    }
@@ -67,6 +66,14 @@ class administrator extends CI_Controller {
     * approwe members test
     */
    public function get_user_transfer_image($id) {
+      $user = $this->ion_auth->user($id)->row();
+      return $this->output->set_content_type('application/json')->set_output(json_encode($user));
+   }
+
+   /**
+    * approwe members test
+    */
+   public function get_user_detail($id) {
       $user = $this->ion_auth->user($id)->row();
       return $this->output->set_content_type('application/json')->set_output(json_encode($user));
    }
