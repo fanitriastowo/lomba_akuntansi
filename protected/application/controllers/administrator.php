@@ -74,8 +74,67 @@ class administrator extends CI_Controller {
     * approwe members test
     */
    public function get_user_detail($id) {
+      $this->load->model('soal_m');
+      $this->load->model('jawaban_m');
+
       $user = $this->ion_auth->user($id)->row();
-      return $this->output->set_content_type('application/json')->set_output(json_encode($user));
+      $user_id = $user->id;
+
+      $jawabans = $this->jawaban_m->get_by('user_id', $user_id);
+      $benar = 0;
+      $salah = 0;
+      foreach ($jawabans as $jawaban) {
+         $single_soal = $this->soal_m->get($jawaban->soal_id, TRUE);
+         if ($jawaban->jawaban == $single_soal->kunci_jawaban) {
+            $benar++;
+         } else {
+            $salah++;
+         }
+      }
+
+      $return = array(
+         "id" => $user->id,
+         "ip_address" => $user->ip_address,
+         "username" => $user->username,
+         "password" => $user->password,
+         "salt" => $user->salt,
+         "email" => $user->email,
+         "activation_code" => $user->activation_code,
+         "forgotten_password_code" => $user->forgotten_password_code,
+         "forgotten_password_time" => $user->forgotten_password_time,
+         "remember_code" => $user->remember_code,
+         "created_on" => $user->created_on,
+         "last_login" => $user->last_login,
+         "active" => $user->active,
+         "nama" => $user->nama,
+         "company" => $user->company,
+         "phone" => $user->phone,
+         "tempat_lahir" => $user->tempat_lahir,
+         "tanggal_lahir" => $user->tanggal_lahir,
+         "jalan" => $user->jalan,
+         "no_rumah" => $user->no_rumah,
+         "rt" => $user->rt,
+         "rw" => $user->rw,
+         "desa" => $user->desa,
+         "kecamatan" => $user->kecamatan,
+         "kabupaten" => $user->kabupaten,
+         "provinsi" => $user->provinsi,
+         "asal_sekolah" => $user->asal_sekolah,
+         "jenis_sekolah" => $user->jenis_sekolah,
+         "pertanyaan" => $user->pertanyaan,
+         "jawaban" => $user->jawaban,
+         "photo" => $user->photo,
+         "bukti_transfer" => $user->bukti_transfer,
+         "sudah_transfer" => $user->sudah_transfer,
+         "belum_ujian" => $user->belum_ujian,
+         "sudah_ujian" => $user->sudah_ujian,
+         "jenis_kelamin" => $user->jenis_kelamin,
+         "tanggal_daftar" => $user->tanggal_daftar,
+         "benar" => $benar,
+         "salah" => $salah
+      );
+
+      return $this->output->set_content_type('application/json')->set_output(json_encode($return));
    }
 
    /**

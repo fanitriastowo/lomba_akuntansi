@@ -202,6 +202,18 @@
                      <input type="text" class="form-control" id="photo" disabled>
                   </div>
                </div>
+               <div class="form-group">
+                  <label for="photo" class="col-sm-2 control-label">Benar</label>
+                  <div class="col-sm-10">
+                     <input type="text" class="form-control" id="benar" disabled>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label for="photo" class="col-sm-2 control-label">Salah</label>
+                  <div class="col-sm-10">
+                     <input type="text" class="form-control" id="salah" disabled>
+                  </div>
+               </div>
             </div>
             <div class="modal-footer">
                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -234,6 +246,8 @@
             $('#alamat').val(data.jalan);
             $('#asal_sekolah').val(data.asal_sekolah);
             $('#photo').val('PHOTO');
+            $('#benar').val(data.benar);
+            $('#salah').val(data.salah);
          });
          $('#modal_get_user_detail').modal();
       });

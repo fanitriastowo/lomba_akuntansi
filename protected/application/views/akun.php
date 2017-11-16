@@ -92,6 +92,7 @@
                      <div class="row">
                         <div class="col-md-12">
                            <h1 class="only-bottom-margin"><?php echo $model->nama; ?></h1>
+                           <h1 class="only-bottom-margin">ID: <?php echo $model->username; ?></h1>
                         </div>
                      </div>
                      <div class="row">
@@ -153,7 +154,7 @@
                         <i class="glyphicon glyphicon-paperclip"></i> Upload Transfer
                      </button>
                      <a href="#"
-                        class="btn btn-default pull-right">
+                        class="btn btn-default pull-right" disabled="true">
                         <i class="glyphicon glyphicon-pencil"></i> Edit
                      </a>
                      <a id="cetak_kwitansi"
