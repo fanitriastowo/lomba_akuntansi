@@ -52,7 +52,7 @@ class administrator extends CI_Controller {
     * Admin Panel
     */
    public function admin_panel_archive() {
-      $model['users'] = $this->ion_auth->user(2)->result();
+      $model['users'] = $this->ion_auth->users(2)->result();
       $this->load->view('administrator/admin_panel_archive', $model);
    }
 
