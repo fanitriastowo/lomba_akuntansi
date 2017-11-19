@@ -129,11 +129,13 @@ $content = '
    
    <strong>Ketentuan:</strong>
    <ol>
-      <li>Proses selanjutnya adalah mengikuti tahap ke 2</li>
-      <li>Proses seleksi tahap 2 akan dilaksanakan di Fakultas Ekonomi dan Bisnis UMP pada tanggal 25 November 2017</li>
-      <li>Peserta akan dilakukan seleksi 10 besar berdasarkan juri untuk berhak melaju ke tahap ke 3</li>
+      <li>Proses selanjutnya adalah mengikuti proses seleksi tahap ke 2</li>
+      <li>Sebelum peserta mengikuti proses seleksi tahap 2, peserta melakukan registrasi ulang dengan cara melakukan pembayaran sebesar Rp. 100.000 melalui transfer ke rekening BRI KK Purwokerto a.n. Nurisna Inayati : 1792-01-001116-53-1 paling lambat 22 November 2017. </li>
+      <li>Proses seleksi tahap 2 akan dilaksanakan di Gedung J Universitas Muhammadiyah Purwokerto lantai 5 pada tanggal 25 November 2017.</li>
+      <li>Pada proses seleksi tahap 2, peserta akan diberikan soal essay akuntansi untuk dikerjakan dan di jawab dengan benar</li>
+      <li>Proses seleksi tahap 2 akan disaring menjadi 10 besar terbaik untuk mengikuti seleksi tahap 3</li>
       <li>Peserta yang lolos ke tahap 3 akan dilakukan LCC atau Lomba Cerdas Cermat</li>
-      <li>Peserta yangi dinyatakan sebagai pemenang juara 1, juara 2 dan juara 3 akan mendapatkan hadiah</li>
+      <li>Peserta yang dinyatakan sebagai pemenang juara 1, juara 2 dan juara 3 akan mendapatkan hadiah</li>
       <li>Hadiah berupa Uang tunai dan juga trophy</li>
    </ol>
 
