@@ -1165,6 +1165,19 @@ class Ion_auth_model extends CI_Model {
    }
 
    /**
+    * user by column
+    *
+    * @return object
+    * @author Fani Triastowo
+    **/
+   public function user_by($key, $value) {
+      $this->trigger_events('user');
+      $this->where($this->tables['users'] . '.' . $key, $value);
+      $this->users();
+      return $this;
+   }
+
+   /**
     * get_users_groups
     *
     * @return array
@@ -1865,15 +1878,5 @@ class Ion_auth_model extends CI_Model {
 
    protected function _prepare_ip($ip_address) {
       return '0x7f000001';
-      /*
-       if ($this->db->platform() === 'postgre' || $this->db->platform() === 'sqlsrv' || $this->db->platform() === 'mssql')
-       {
-         return $ip_address;
-       }
-       else
-       {
-         return inet_pton($ip_address);
-       }
-       */
    }
 }

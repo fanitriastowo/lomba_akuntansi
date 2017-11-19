@@ -44,7 +44,7 @@ class administrator extends CI_Controller {
     * Admin Panel
     */
    public function admin_panel() {
-      $model['users'] = $this->ion_auth->users(2)->result();
+      $model['users'] = $this->ion_auth->user_by('sudah_ujian', 1)->result();
       $this->load->view('administrator/admin_panel', $model);
    }
 
@@ -58,6 +58,17 @@ class administrator extends CI_Controller {
           'belum_ujian' => $status_ujian
       );
 
+      $this->ion_auth->update($user_id, $user);
+      redirect("administrator");
+   }
+
+   /**
+    * approwe members test
+    */
+   public function approve_sudah_transfer_final() {
+      $user_id = $this->input->post('user_id');
+      $sudah_transfer_final = $this->input->post('sudah_transfer_final');
+      $user = array('sudah_transfer_final' => $sudah_transfer_final);
       $this->ion_auth->update($user_id, $user);
       redirect("administrator");
    }
@@ -130,6 +141,7 @@ class administrator extends CI_Controller {
          "sudah_ujian" => $user->sudah_ujian,
          "jenis_kelamin" => $user->jenis_kelamin,
          "tanggal_daftar" => $user->tanggal_daftar,
+         "sudah_transfer_final" => $user->sudah_transfer_final,
          "benar" => $benar,
          "salah" => $salah
       );
