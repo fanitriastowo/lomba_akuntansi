@@ -55,7 +55,7 @@ class Akun extends CI_Controller {
             $updated_image = $this->upload->data();
 
             $user = array(
-                'sudah_transfer' => 1,
+                'sudah_transfer_final' => 1,
                 'bukti_transfer' => $image_name . $updated_image['file_ext']
             );
             $this->ion_auth->update($principal->id, $user);

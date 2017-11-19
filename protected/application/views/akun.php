@@ -230,7 +230,7 @@
             </div>
 
             <div class="form-group">
-               <label for="add_filename" class="col-sm-2 control-label">Jawaban:</label>
+               <label for="pertanyaanku" class="col-sm-2 control-label">Jawaban:</label>
                <div class="col-sm-10">
                   <textarea cols="50" name="pertanyaanku" rows="3"></textarea>
                </div>
