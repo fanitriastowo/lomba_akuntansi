@@ -11,7 +11,7 @@
    <div class="panel panel-default">
       <div class="panel-body">
          <h1 class="text-center">Daftar Peserta</h1>
-
+         <p class="text-center">*Dibawah ini merupakan daftar peserta CBT</p>
 
          <table id="peserta_table" class="table table-condensed table-bordered table-striped table-hover">
             <thead>
@@ -119,18 +119,18 @@
             </div>
 
             <img src="" id="image_name" class="img-thumbnail" width="350px">
-<!--            <br>-->
-<!--            <br>-->
-<!--            <label class="radio-inline">-->
-<!--               <input type="radio" name="belum_ujian" value="1"> Approve-->
-<!--            </label>-->
-<!--            <label class="radio-inline">-->
-<!--               <input type="radio" name="belum_ujian" value="0"> Disapprove-->
-<!--            </label>-->
+            <br>
+            <br>
+            <label class="radio-inline">
+               <input type="radio" name="belum_ujian" value="1"> Approve
+            </label>
+            <label class="radio-inline">
+               <input type="radio" name="belum_ujian" value="0"> Disapprove
+            </label>
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-<!--            <input type="submit" class="btn btn-primary" value="Simpan"/>-->
+            <input type="submit" class="btn btn-primary" value="Simpan"/>
          </div>
       </div>
    </div>

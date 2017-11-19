@@ -11,7 +11,7 @@
    <div class="panel panel-default">
       <div class="panel-body">
          <h1 class="text-center">Daftar Peserta</h1>
-
+         <p class="text-center">*Dibawah ini merupakan daftar peserta CBT yang lolos ke tahap final</p>
 
          <table id="peserta_table" class="table table-condensed table-bordered table-striped table-hover">
             <thead>
@@ -73,6 +73,11 @@
                  class="label label-default"><?php echo $status_belum_transfer; ?></label><br>
          <label class="label label-success">status</label> <code>Sudah Transfer</code> -> <label
                  class="label label-default"><?php echo $status_sudah_transfer; ?></label><br>
+
+         <span class="pull-right">
+            <a href="<?php echo site_url("administrator/admin_panel_archive"); ?>"
+               class="btn btn-xs btn-info">Archive</a>
+         </span>
       </div>
       <div class="panel-footer">
          <a class="btn btn-primary btn-md btn-block" href="<?php echo site_url('administrator/logout'); ?>">Logout</a>
