@@ -173,7 +173,7 @@
                         <i class="glyphicon glyphicon-print"></i> Kwitansi
                      </a>
                      <button type="button" data-toggle="modal" data-target="#modal_tes"
-                             class="btn btn-default pull-left">
+                             class="btn btn-default pull-left" disabled>
                         <i class="glyphicon glyphicon-book"></i> Mulai Tes
                      </button>
                   </div>

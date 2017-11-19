@@ -10,7 +10,7 @@ $obj_pdf = new TCPDF
 $obj_pdf->SetCreator(PDF_CREATOR);
 $title = "Pengumuman";
 $obj_pdf->SetTitle($title);
-$obj_pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, $title, 'Selamat Anda lolos ke tahap final');
+$obj_pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, $title, 'Selamat Anda lolos ke tahap ke 2');
 $obj_pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 $obj_pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 $obj_pdf->SetDefaultMonospacedFont('helvetica');
@@ -100,7 +100,7 @@ $content = '
 
    <div class="text-center">
       <span>Terima Kasih telah melaksanakan ujian CBT dengan baik</span><br>
-      <span>Silahkan perhatikan proses tahap final berikut ini</span>
+      <span>Silahkan perhatikan proses tahap ke 2</span>
    </div>
    
    <br>
@@ -123,15 +123,24 @@ $content = '
       </tr>
    </table>
    
+   <br>
+   <br>
+   <br>
+   
+   <strong>Ketentuan:</strong>
    <ol>
-      <li>Proses selanjutnya adalah mengikuti tahap Final yaitu tahapan debat</li>
-      <li>bubba</li>
+      <li>Proses selanjutnya adalah mengikuti tahap ke 2</li>
+      <li>Proses seleksi tahap 2 akan dilaksanakan di Fakultas Ekonomi dan Bisnis UMP pada tanggal 25 November 2017</li>
+      <li>Peserta akan dilakukan seleksi 10 besar berdasarkan juri untuk berhak melaju ke tahap ke 3</li>
+      <li>Peserta yang lolos ke tahap 3 akan dilakukan LCC atau Lomba Cerdas Cermat</li>
+      <li>Peserta yangi dinyatakan sebagai pemenang juara 1, juara 2 dan juara 3 akan mendapatkan hadiah</li>
+      <li>Hadiah berupa Uang tunai dan juga trophy</li>
    </ol>
 
    <br>
 
-   <span style="font-size: 8px">silahkan transfer <strong>Rp. 100.000,-</strong> paling lambat <strong>
-   22 November 2017</strong> ke rekening berikut:</span>
+   <p style="font-size: 8px">silahkan transfer <strong>Rp. 100.000,-</strong> paling lambat <strong>
+   22 November 2017</strong> ke rekening berikut:</p>
    <br><br>
    
    <strong>
