@@ -70,8 +70,18 @@
                            Ooppsss.... Anda belum melakukan transfer atau belum di Approve oleh kami.
                         </div>
                      <?php endif ?>
-
-
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-12 text-center">
+                     <?php if ($model->sudah_ujian == 1): ?>
+                        <div class="alert alert-success">
+                           <strong>Pemberitahuan,</strong> Selamat <?php echo $model->nama; ?>
+                           Anda lolos ke tahap selanjutnya. Klik
+                           <a href="<?php echo site_url("akun/pengumuman_lolos_ke_final") ?>" target="_blank">disini</a>
+                           untuk proses selanjutnya
+                        </div>
+                     <?php endif ?>
                   </div>
                </div>
                <div class="row">
@@ -86,7 +96,7 @@
                      <h4>Bukti Transfer</h4>
                      <img width="120"
                           class="img-thumbnail avatar avatar-original"
-                          src="<?php echo site_url("uploads/bukti_transfer/" . $model->bukti_transfer); ?>">
+                          src="<?php echo site_url("uploads/bukti_transfer_final/" . $model->bukti_transfer); ?>">
                   </div>
                   <div class="col-md-8">
                      <div class="row">

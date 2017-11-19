@@ -27,6 +27,12 @@ class Akun extends CI_Controller {
       $this->load->view('kwitansi', $model);
    }
 
+   public function pengumuman_lolos_ke_final() {
+      $this->load->helper('tcpdf_helper');
+      $model['model'] = $this->ion_auth->user()->row();
+      $this->load->view('pengumuman_lolos_ke_final', $model);
+   }
+
    public function upload_kwitansi() {
 
       $principal = $this->ion_auth->user()->row();
@@ -35,7 +41,7 @@ class Akun extends CI_Controller {
       // photo field
       // Set filename
       $config['file_name'] = $image_name;
-      $config['upload_path'] = 'uploads/bukti_transfer/';
+      $config['upload_path'] = 'uploads/bukti_transfer_final/';
       $config['allowed_types'] = 'gif|jpg|png|jpeg';
       $config['max_size'] = '3096';
       $config['max_height'] = '4098';
@@ -43,7 +49,7 @@ class Akun extends CI_Controller {
       $this->load->library('upload', $config);
 
       // check sudah pernah upload bukti transfer
-      if (!$principal->sudah_transfer) {        // 0
+      if (!$principal->sudah_transfer) { // 0
 
          if ($this->upload->do_upload('bukti_transfer')) {
             $updated_image = $this->upload->data();
@@ -56,7 +62,7 @@ class Akun extends CI_Controller {
 
          }
 
-      } else {                                  // 1
+      } else { // 1
 
          if ($this->upload->do_upload('bukti_transfer')) {
             $updated_image = $this->upload->data();
@@ -132,10 +138,10 @@ class Akun extends CI_Controller {
          }
       }
 
-// load soal model
+      // load soal model
       $this->load->model('soal_m');
 
-//ambil paket soal 1 - 7 diacak dari database simpan ke table ujian
+      //ambil paket soal 1 - 7 diacak dari database simpan ke table ujian
       $this->soal_m->get_paket_soal($principal->id, 2);
 
       $data['principal'] = $principal;
@@ -143,8 +149,7 @@ class Akun extends CI_Controller {
    }
 
 
-   private
-   function __generate_image_name() {
+   private function __generate_image_name() {
       return $number = rand(10000, 99999);
    }
 
